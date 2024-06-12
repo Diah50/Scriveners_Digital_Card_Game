@@ -10,7 +10,7 @@ Sam Clafin(magosepsilusdammekyoth) - Narrative Writer
 
 Lutaic - Programmer
 
-IceofSpades - Programmer
+IceofSpade - Programmer
 
 Sayomi - Programmer
 
