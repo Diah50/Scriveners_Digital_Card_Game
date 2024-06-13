@@ -1,0 +1,309 @@
+[gd_scene load_steps=23 format=3 uid="uid://cw7ye7msiyejp"]
+
+[ext_resource type="Script" path="res://scenes/card Template.gd" id="1_btga0"]
+[ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/ingenuity_icon.png" id="2_d1t3k"]
+[ext_resource type="Texture2D" uid="uid://brhy3lv4hy46f" path="res://assets/textures/Icons/card_icon.png" id="2_nwrue"]
+[ext_resource type="Texture2D" uid="uid://ugct8o3ae41s" path="res://assets/textures/Icons/power_icon.png" id="3_idafw"]
+[ext_resource type="Texture2D" uid="uid://yvmoavymhnbc" path="res://assets/textures/Icons/heart_icon.png" id="4_7x4wq"]
+[ext_resource type="Texture2D" uid="uid://tcac8rylv62s" path="res://assets/textures/Neutral_-_3_Front.png" id="5_6foti"]
+[ext_resource type="Texture2D" uid="uid://cixob3vlhclfj" path="res://assets/textures/ScrivenersBack.png" id="8_k7k4j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fudf"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 48
+border_width_top = 48
+border_width_right = 48
+border_width_bottom = 48
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="Theme" id="Theme_a7u7p"]
+Panel/styles/panel = SubResource("StyleBoxFlat_3fudf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi34e"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="Theme" id="Theme_kdupp"]
+Panel/styles/panel = SubResource("StyleBoxFlat_vi34e")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivg5e"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sxsr3"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ycge"]
+bg_color = Color(1, 0, 1, 1)
+
+[sub_resource type="Theme" id="Theme_actlg"]
+Panel/styles/panel = SubResource("StyleBoxFlat_7ycge")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3nk5"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[sub_resource type="Theme" id="Theme_8rrqg"]
+Panel/styles/panel = SubResource("StyleBoxFlat_h3nk5")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xy22"]
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_18dh5"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5jbs"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0pwq"]
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2lyuj"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="CardTemplate" type="Node2D"]
+script = ExtResource("1_btga0")
+metadata/_edit_vertical_guides_ = [-480.0, 480.0, -121.0, 120.0]
+metadata/_edit_horizontal_guides_ = [-672.0, 672.0, -168.0, 168.0]
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(960, 1344)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -168.0
+offset_right = 839.0
+offset_bottom = 1176.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="background" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(960, 1344)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control/background"]
+layout_mode = 2
+theme = SubResource("Theme_a7u7p")
+
+[node name="TextureRect" type="TextureRect" parent="Control/background/Panel"]
+custom_minimum_size = Vector2(960, 1344)
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 1344.0
+texture = ExtResource("5_6foti")
+
+[node name="Description box" type="MarginContainer" parent="Control/background/Panel"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 798.0
+offset_right = 848.0
+offset_bottom = 1242.0
+
+[node name="Panel" type="Panel" parent="Control/background/Panel/Description box"]
+layout_mode = 2
+theme = SubResource("Theme_kdupp")
+
+[node name="GridContainer" type="VBoxContainer" parent="Control/background/Panel/Description box/Panel"]
+custom_minimum_size = Vector2(720, 435)
+layout_mode = 0
+offset_left = 9.0
+offset_right = 729.0
+offset_bottom = 435.0
+
+[node name="descriptionText" type="Label" parent="Control/background/Panel/Description box/Panel/GridContainer"]
+custom_minimum_size = Vector2(445, 338)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed pulvinar proin gravida hendrerit lectus a. Pulvinar elementum"
+label_settings = SubResource("LabelSettings_ivg5e")
+autowrap_mode = 3
+clip_text = true
+
+[node name="MarginContainer" type="HBoxContainer" parent="Control/background/Panel/Description box/Panel/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/background/Panel/Description box/Panel/GridContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="flavorText" type="Label" parent="Control/background/Panel/Description box/Panel/GridContainer/MarginContainer"]
+custom_minimum_size = Vector2(487, 62)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor verra nibh "
+label_settings = SubResource("LabelSettings_sxsr3")
+autowrap_mode = 3
+clip_text = true
+
+[node name="Image window" type="MarginContainer" parent="Control/background/Panel"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 248.0
+offset_right = 848.0
+offset_bottom = 798.0
+
+[node name="Panel" type="Panel" parent="Control/background/Panel/Image window"]
+layout_mode = 2
+theme = SubResource("Theme_actlg")
+
+[node name="cardImage" type="TextureRect" parent="Control/background/Panel/Image window"]
+layout_mode = 2
+expand_mode = 1
+
+[node name="header" type="MarginContainer" parent="Control/background/Panel"]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 74.0
+offset_right = 877.0
+offset_bottom = 261.0
+
+[node name="Panel" type="Panel" parent="Control/background/Panel/header"]
+layout_mode = 2
+theme = SubResource("Theme_8rrqg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/background/Panel/header/Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 761.0
+offset_bottom = 184.0
+
+[node name="cardName" type="Label" parent="Control/background/Panel/header/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_4xy22")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/background/Panel/header/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/background/Panel/header/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="cardType" type="TextureRect" parent="Control/background/Panel/header/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_nwrue")
+expand_mode = 1
+flip_h = true
+
+[node name="subtypeText" type="Label" parent="Control/background/Panel/header/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(575, 0)
+layout_mode = 2
+text = "Subtype"
+label_settings = SubResource("LabelSettings_18dh5")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/background/Panel/header/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/background/Panel/header/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="cost" type="Label" parent="Control/background/Panel/header/Panel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+text = "00"
+label_settings = SubResource("LabelSettings_l5jbs")
+
+[node name="Faction icon" type="MarginContainer" parent="Control/background/Panel"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 49.0
+offset_right = 198.0
+offset_bottom = 200.0
+
+[node name="factionTexture" type="TextureRect" parent="Control/background/Panel/Faction icon"]
+layout_mode = 2
+texture = ExtResource("2_d1t3k")
+expand_mode = 1
+
+[node name="Power" type="MarginContainer" parent="Control/background/Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 1145.0
+offset_right = 199.0
+offset_bottom = 1296.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/background/Panel/Power"]
+layout_mode = 2
+texture = ExtResource("3_idafw")
+expand_mode = 1
+
+[node name="powerText" type="Label" parent="Control/background/Panel/Power/TextureRect"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 60.0
+offset_right = 98.0
+offset_bottom = 108.0
+text = "00"
+label_settings = SubResource("LabelSettings_r0pwq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heart" type="MarginContainer" parent="Control/background/Panel"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 1145.0
+offset_right = 344.0
+offset_bottom = 1296.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/background/Panel/Heart"]
+layout_mode = 2
+texture = ExtResource("4_7x4wq")
+expand_mode = 1
+
+[node name="heartText" type="Label" parent="Control/background/Panel/Heart/TextureRect"]
+offset_left = 53.0
+offset_top = 60.0
+offset_right = 98.0
+offset_bottom = 108.0
+text = "00"
+label_settings = SubResource("LabelSettings_r0pwq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArtistTage" type="HBoxContainer" parent="Control/background/Panel"]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 1077.0
+offset_right = 1114.0
+offset_bottom = 1140.0
+rotation = -1.5708
+
+[node name="artistTag" type="Label" parent="Control/background/Panel/ArtistTage"]
+layout_mode = 2
+text = "Artist:"
+label_settings = SubResource("LabelSettings_2lyuj")
+
+[node name="artistName" type="Label" parent="Control/background/Panel/ArtistTage"]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_2lyuj")
+
+[node name="cardback" type="TextureRect" parent="Control/background"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_k7k4j")
