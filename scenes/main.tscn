@@ -1,27 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnkm6nq6cov18"]
+[gd_scene load_steps=3 format=3 uid="uid://dnkm6nq6cov18"]
 
-[ext_resource type="PackedScene" uid="uid://cw7ye7msiyejp" path="res://scenes/card Template.tscn" id="1_g5xrc"]
-[ext_resource type="Script" path="res://gobal scripts/cardResource.gd" id="2_md0n2"]
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_oumlu"]
 
-[sub_resource type="Resource" id="Resource_to5yu"]
-script = ExtResource("2_md0n2")
-cardName = "Godot"
-cost = 5
-cardType = 1
-faction = 5
-subtype = "Godot"
-power = 12
-heart = 69
-description = "This is a developer card if your reading this something has gone wrong."
-flovorText = "Truely you have broke something"
-artistName = "Godot"
-cardArt = "res://icon.svg"
+[sub_resource type="LabelSettings" id="LabelSettings_o2w0f"]
+font_size = 70
 
-[node name="main" type="Node2D"]
+[node name="menu" type="Node2D"]
+script = ExtResource("1_oumlu")
 
-[node name="CardTemplate" parent="." instance=ExtResource("1_g5xrc")]
-position = Vector2(232, 321)
-scale = Vector2(1.9, 1.9)
-cardInfo = SubResource("Resource_to5yu")
-metadata/_edit_vertical_guides_ = [-480.0, 480.0]
-metadata/_edit_horizontal_guides_ = [-672.0, 672.0]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1155.0
+offset_bottom = 644.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 35.0
+offset_right = 751.0
+offset_bottom = 131.0
+text = "Scriveners "
+label_settings = SubResource("LabelSettings_o2w0f")
+
+[node name="Start_btm" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 277.0
+offset_right = 669.0
+offset_bottom = 357.0
+text = "Start"
+
+[node name="Settings_btm" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 366.0
+offset_right = 669.0
+offset_bottom = 446.0
+text = "Settings"
+
+[node name="Quit_btm" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 458.0
+offset_right = 669.0
+offset_bottom = 538.0
+text = "Quit"
+
+[connection signal="button_up" from="Control/Start_btm" to="." method="_on_start_btm_button_up"]
+[connection signal="button_up" from="Control/Settings_btm" to="." method="_on_settings_btm_button_up"]
+[connection signal="button_up" from="Control/Quit_btm" to="." method="_on_quit_btm_button_up"]

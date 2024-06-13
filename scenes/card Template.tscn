@@ -1,12 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cw7ye7msiyejp"]
+[gd_scene load_steps=22 format=3 uid="uid://cw7ye7msiyejp"]
 
 [ext_resource type="Script" path="res://scenes/card Template.gd" id="1_btga0"]
-[ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/ingenuity_icon.png" id="2_d1t3k"]
-[ext_resource type="Texture2D" uid="uid://brhy3lv4hy46f" path="res://assets/textures/Icons/card_icon.png" id="2_nwrue"]
 [ext_resource type="Texture2D" uid="uid://ugct8o3ae41s" path="res://assets/textures/Icons/power_icon.png" id="3_idafw"]
+[ext_resource type="Texture2D" uid="uid://brhy3lv4hy46f" path="res://assets/textures/Icons/card types/card_icon.png" id="3_m552f"]
 [ext_resource type="Texture2D" uid="uid://yvmoavymhnbc" path="res://assets/textures/Icons/heart_icon.png" id="4_7x4wq"]
+[ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/factions/ingenuity_icon.png" id="4_n54b8"]
 [ext_resource type="Texture2D" uid="uid://tcac8rylv62s" path="res://assets/textures/Neutral_-_3_Front.png" id="5_6foti"]
-[ext_resource type="Texture2D" uid="uid://cixob3vlhclfj" path="res://assets/textures/ScrivenersBack.png" id="8_k7k4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fudf"]
 bg_color = Color(1, 1, 1, 1)
@@ -104,7 +103,8 @@ offset_bottom = 40.0
 layout_mode = 2
 theme = SubResource("Theme_a7u7p")
 
-[node name="TextureRect" type="TextureRect" parent="Control/background/Panel"]
+[node name="card front" type="TextureRect" parent="Control/background/Panel"]
+visible = false
 custom_minimum_size = Vector2(960, 1344)
 layout_mode = 0
 offset_right = 960.0
@@ -205,7 +205,7 @@ size_flags_horizontal = 3
 [node name="cardType" type="TextureRect" parent="Control/background/Panel/header/Panel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("2_nwrue")
+texture = ExtResource("3_m552f")
 expand_mode = 1
 flip_h = true
 
@@ -237,7 +237,7 @@ offset_bottom = 200.0
 
 [node name="factionTexture" type="TextureRect" parent="Control/background/Panel/Faction icon"]
 layout_mode = 2
-texture = ExtResource("2_d1t3k")
+texture = ExtResource("4_n54b8")
 expand_mode = 1
 
 [node name="Power" type="MarginContainer" parent="Control/background/Panel"]
@@ -276,6 +276,7 @@ texture = ExtResource("4_7x4wq")
 expand_mode = 1
 
 [node name="heartText" type="Label" parent="Control/background/Panel/Heart/TextureRect"]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 60.0
 offset_right = 98.0
@@ -303,7 +304,7 @@ layout_mode = 2
 text = "Name"
 label_settings = SubResource("LabelSettings_2lyuj")
 
-[node name="cardback" type="TextureRect" parent="Control/background"]
-visible = false
-layout_mode = 2
-texture = ExtResource("8_k7k4j")
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

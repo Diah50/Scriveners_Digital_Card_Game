@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yssbp11a2cg7"
-path="res://.godot/imported/unit_icon.png-032d1f77df8430b53afd9d78e14c03de.ctex"
+uid="uid://h307w1s2265g"
+path="res://.godot/imported/ingenuity_icon.png-c2e27eda9ac8d8ed1f64b8316c55bfa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Icons/unit_icon.png"
-dest_files=["res://.godot/imported/unit_icon.png-032d1f77df8430b53afd9d78e14c03de.ctex"]
+source_file="res://assets/textures/Icons/factions/ingenuity_icon.png"
+dest_files=["res://.godot/imported/ingenuity_icon.png-c2e27eda9ac8d8ed1f64b8316c55bfa2.ctex"]
 
 [params]
 

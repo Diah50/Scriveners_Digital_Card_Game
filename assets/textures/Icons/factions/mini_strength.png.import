@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wxqn43e66axo"
-path="res://.godot/imported/commander_icon.png-dacb243f34862a42e016e4d11ae2f089.ctex"
+uid="uid://dfv7c04ls3x6q"
+path="res://.godot/imported/mini_strength.png-ed59611bcaed220f44a78ba5e39788c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Icons/commander_icon.png"
-dest_files=["res://.godot/imported/commander_icon.png-dacb243f34862a42e016e4d11ae2f089.ctex"]
+source_file="res://assets/textures/Icons/factions/mini_strength.png"
+dest_files=["res://.godot/imported/mini_strength.png-ed59611bcaed220f44a78ba5e39788c4.ctex"]
 
 [params]
 

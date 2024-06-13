@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bstnmbxxb6vjl"]
+
+[ext_resource type="PackedScene" uid="uid://cw7ye7msiyejp" path="res://scenes/card Template.tscn" id="1_fq5pq"]
+[ext_resource type="Script" path="res://global scripts/cardResource.gd" id="2_fnbpa"]
+
+[sub_resource type="Resource" id="Resource_3fyog"]
+script = ExtResource("2_fnbpa")
+cardName = "Godot"
+cost = 5
+cardType = 1
+faction = 5
+subtype = "Godot"
+power = 12
+heart = 69
+description = "This is a developer card if your reading this something has gone wrong."
+flovorText = "Truely you have broke something"
+artistName = "Godot"
+cardArt = "res://icon.svg"
+
+[node name="Gameboard" type="Node2D"]
+
+[node name="CardTemplate" parent="." instance=ExtResource("1_fq5pq")]
+position = Vector2(232, 321)
+scale = Vector2(1.9, 1.9)
+cardInfo = SubResource("Resource_3fyog")
+metadata/_edit_vertical_guides_ = [-480.0, 480.0]
+metadata/_edit_horizontal_guides_ = [-672.0, 672.0]

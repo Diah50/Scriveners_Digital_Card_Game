@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h307w1s2265g"
-path="res://.godot/imported/ingenuity_icon.png-67016080e6b9d4734a6800111e0e14a3.ctex"
+uid="uid://wxqn43e66axo"
+path="res://.godot/imported/commander_icon.png-84cac354f0d59c8ea0ae8aee022aa136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Icons/ingenuity_icon.png"
-dest_files=["res://.godot/imported/ingenuity_icon.png-67016080e6b9d4734a6800111e0e14a3.ctex"]
+source_file="res://assets/textures/Icons/card types/commander_icon.png"
+dest_files=["res://.godot/imported/commander_icon.png-84cac354f0d59c8ea0ae8aee022aa136.ctex"]
 
 [params]
 

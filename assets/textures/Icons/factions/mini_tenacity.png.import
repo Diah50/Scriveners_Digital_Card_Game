@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck3dm0aa1uv2w"
-path="res://.godot/imported/endurance_icon.png-c49347a7a8f4f899882a0d1709c62960.ctex"
+uid="uid://b4qr8hddfnkx6"
+path="res://.godot/imported/mini_tenacity.png-403d1ec9bc5707867e20eb108b4b906e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Icons/endurance_icon.png"
-dest_files=["res://.godot/imported/endurance_icon.png-c49347a7a8f4f899882a0d1709c62960.ctex"]
+source_file="res://assets/textures/Icons/factions/mini_tenacity.png"
+dest_files=["res://.godot/imported/mini_tenacity.png-403d1ec9bc5707867e20eb108b4b906e.ctex"]
 
 [params]
 

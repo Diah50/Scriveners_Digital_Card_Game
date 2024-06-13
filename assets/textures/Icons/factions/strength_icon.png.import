@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpsxr1w3gg86b"
-path="res://.godot/imported/location_icon.png-7c00335d4352714217883140adb235c0.ctex"
+uid="uid://cnwe6voambq66"
+path="res://.godot/imported/strength_icon.png-fbc9b1312b1ce148b6fe3aed666e4252.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Icons/location_icon.png"
-dest_files=["res://.godot/imported/location_icon.png-7c00335d4352714217883140adb235c0.ctex"]
+source_file="res://assets/textures/Icons/factions/strength_icon.png"
+dest_files=["res://.godot/imported/strength_icon.png-fbc9b1312b1ce148b6fe3aed666e4252.ctex"]
 
 [params]
 
