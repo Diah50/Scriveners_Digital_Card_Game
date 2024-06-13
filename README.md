@@ -6,9 +6,11 @@ Using Angen by Teifion - https://github.com/Teifion/angen?tab=readme-ov-file
 ### Credits 
 Henry Ha(Diahborne) - Lead 2D Artist/Game Director
 
+Sam Clafin(magosepsilusdammekyoth) - Narrative Writer
+
 Lutaic - Programmer
 
-Sam Clafin(magosepsilusdammekyoth) - Narrative Writer
+IceofSpade - Programmer
 
 Sayomi - Programmer
 
