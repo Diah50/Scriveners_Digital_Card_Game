@@ -8,14 +8,36 @@ Henry Ha(Diahborne) - Lead 2D Artist/Game Director
 
 Sam Clafin(magosepsilusdammekyoth) - Narrative Writer
 
-Lutaic - Programmer
+Miles(duneysands) - Narrative Writer/Designer
 
-IceofSpade - Programmer
+Lutaic {lutaic} - Programmer
+
+IceofSpade {glacialspade} - Programmer
 
 Sayomi - Programmer
 
 Magneter - Programmer
 
-The_Ace_Arguer - 
+Tony(Edenboy) - Programmer
+
+Kitami {bargonex} - Programmer
+
+The_Ace_Arguer - Management Consultant
 
 Brendan(beaker of fish) - Designer
+
+Sofus - Designer
+
+King of Quiek - Designer
+
+Zyxthezyx - Designer
+
+Noel(King of Green) - Tester/R&D
+
+Pluckine - Artist
+
+.beesbeesbees. - Artist
+
+Chen - Artist
+
+Issac(mototear5917) - Artist
