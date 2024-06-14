@@ -19,9 +19,9 @@ class_name CardTemplate
 
 
 func _ready():
-	update_card_data()
+	update_card_visuals()
 	
-func update_card_data():
+func update_card_visuals():
 	cardName.text = cardInfo.cardName
 	cost.text = str(cardInfo.cost)
 	cardType.texture = await cardInfo.load_card_type_texture(cardInfo.cardType)

@@ -303,8 +303,3 @@ label_settings = SubResource("LabelSettings_2lyuj")
 layout_mode = 2
 text = "Name"
 label_settings = SubResource("LabelSettings_2lyuj")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0

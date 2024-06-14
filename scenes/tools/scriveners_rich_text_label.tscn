@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://eik7hn8vmhxq"]
+
+[ext_resource type="Script" path="res://scenes/ScrivenersRichTextLabel.gd" id="1_gjr2i"]
+
+[node name="ScrivenersRichTextLabel" type="RichTextLabel"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 55.0
+offset_bottom = 60.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+scroll_active = false
+context_menu_enabled = true
+script = ExtResource("1_gjr2i")
