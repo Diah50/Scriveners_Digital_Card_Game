@@ -1,10 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dnkm6nq6cov18"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_oumlu"]
+[ext_resource type="Texture2D" uid="uid://caau1gmebhbhr" path="res://assets/textures/Scriveners_Logo.png" id="2_c5e27"]
 [ext_resource type="PackedScene" uid="uid://eik7hn8vmhxq" path="res://scenes/tools/scriveners_rich_text_label.tscn" id="3_jee3u"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_o2w0f"]
-font_size = 70
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_oumlu")
@@ -15,14 +13,10 @@ anchors_preset = 0
 offset_right = 1155.0
 offset_bottom = 644.0
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 385.0
-offset_top = 35.0
-offset_right = 751.0
-offset_bottom = 131.0
-text = "Scriveners "
-label_settings = SubResource("LabelSettings_o2w0f")
+[node name="Label" type="Sprite2D" parent="Control"]
+position = Vector2(566, 143)
+scale = Vector2(0.219444, 0.219444)
+texture = ExtResource("2_c5e27")
 
 [node name="Start_btm" type="Button" parent="Control"]
 layout_mode = 0
