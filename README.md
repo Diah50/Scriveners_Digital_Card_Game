@@ -16,11 +16,15 @@ IceofSpade {glacialspade} - Programmer
 
 Sayomi - Programmer
 
+Derphh(derphh) - Programmer
+
 Magneter - Programmer
 
 Tony(Edenboy) - Programmer
 
 Kitami {bargonex} - Programmer
+
+Valgumir(valgumir) - Programmer
 
 The_Ace_Arguer - Management Consultant
 
@@ -38,7 +42,9 @@ Noel(King of Green) - Tester/R&D
 
 pluckine - Artist
 
-.beesbeesbees. - Artist
+Issac(mototear5917) - Artist
+
+Sketchlord2(sketchyirregulord) - Artist
 
 Issac(mototear5917) - Artist
 
