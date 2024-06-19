@@ -16,8 +16,6 @@ IceofSpade {glacialspade} - Programmer
 
 Sayomi - Programmer
 
-Derphh(derphh) - Programmer
-
 Magneter - Programmer
 
 Tony(Edenboy) - Programmer
@@ -30,10 +28,6 @@ The_Ace_Arguer - Management Consultant
 
 Brendan(beaker of fish) - Designer
 
-Sofus - Designer
-
-King of Quiek - Designer
-
 Zyxthezyx - Designer
 
 Master_of_pride - Designer
@@ -45,8 +39,4 @@ pluckine - Artist
 Issac(mototear5917) - Artist
 
 Sketchlord2(sketchyirregulord) - Artist
-
-Issac(mototear5917) - Artist
-
-Sketchyirregulord - Artist
 
