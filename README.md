@@ -22,13 +22,11 @@ Tony(Edenboy) - Programmer
 
 Kitami {bargonex} - Programmer
 
+Valgumir(valgumir) - Programmer
+
 The_Ace_Arguer - Management Consultant
 
 Brendan(beaker of fish) - Designer
-
-Sofus - Designer
-
-King of Quiek - Designer
 
 Zyxthezyx - Designer
 
@@ -38,9 +36,7 @@ Noel(King of Green) - Tester/R&D
 
 pluckine - Artist
 
-.beesbeesbees. - Artist
-
 Issac(mototear5917) - Artist
 
-Sketchyirregulord - Artist
+Sketchlord2(sketchyirregulord) - Artist
 
