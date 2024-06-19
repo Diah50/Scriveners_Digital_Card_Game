@@ -7,14 +7,16 @@ class_name ScrivenersRichText
 
 var keyWords = [
 "Ingenuity", "Endurance", "Strength", "Hegemony" , "Ambition" , "Tenacity", "Power",
-"Heart", "Card", "Support", "Equipment", "Location", "Commander", "Unit",
+"Heart", "Card", "Support", "Equipment", "Location", "Commander", "Unit","Neutral",
 "Burst","Revenge","Twinattack", "Murder", "Slayer", "Protected", "Aerial", "Whirlwind", "Unique", "Logistics", "Gravefeed", "Necroform X","Improvise", "Enrage", "Pincer", "Active", "Ranged", "Guardian", "Sift X","Energize", "Patience", "Rapid", "Fervor" 
 ]
 @export var iconSize = 24
 
 var lastTest = ""
+var lastIconSize = iconSize
 
 func _ready():
+	bbcode_enabled = true
 	complile_text()
 
 func complile_text():
@@ -25,9 +27,10 @@ func complile_text():
 		text = regex.sub(text,load_text_effect(key),true)
 
 func _process(_delta):
-	if lastTest != text:
-		complile_text()
+	if lastTest != text or iconSize != lastIconSize:
 		lastTest = text
+		lastIconSize = iconSize
+		complile_text()
 
 func load_text_effect(text:String):
 	match text:
@@ -49,6 +52,8 @@ func load_text_effect(text:String):
 			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/heart_icon.png[/img]"
 		"Card":
 			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/card types/card_icon.png[/img]"
+		"Neutral":
+			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/card types/neutral_icon.png[/img]"
 		"Support":
 			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/factions/support_icon.png[/img]"
 		"Equipment":

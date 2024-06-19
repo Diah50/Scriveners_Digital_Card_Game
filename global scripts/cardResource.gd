@@ -3,7 +3,6 @@ extends Resource
 class_name CardData
 enum Faction{AMBITION,INGENUITY,STRENGTH,ENDURANCE,TENACITY,CONTROL,HEGEMONY}
 
-enum Subtype {ROBOT}
 enum CardType {CARD,COMMANDER,LOCATION,SUPPORT,NEUTRAL,EQUIPMENT}
 @export var cardName:String
 @export var cost:int
@@ -16,21 +15,22 @@ enum CardType {CARD,COMMANDER,LOCATION,SUPPORT,NEUTRAL,EQUIPMENT}
 @export var flovorText:String
 @export var artistName:String
 @export var cardArt:String
+@export var moveSpeed:int = 1
 
-func load_card_type_texture(type:CardType):
+func load_card_type(type:CardType):
 	match type:
 		CardType.CARD:
-			return load("res://assets/textures/Icons/card types/card_icon.png")
+			return "${Card}"
 		CardType.COMMANDER:
-			return load("res://assets/textures/Icons/card types/commander_icon.png")
+			return "${Commander}"
 		CardType.LOCATION:
-			return load("res://assets/textures/Icons/card types/location_icon.png")
+			return "${Location}"
 		CardType.SUPPORT:
-			return load("res://assets/textures/Icons/card types/support_icon.png")
+			return "${Support}"
 		CardType.NEUTRAL:
-			return load("res://assets/textures/Icons/card types/neutral_icon.png")
+			return "${Neutral}"
 		CardType.EQUIPMENT:
-			return load("res://assets/textures/Icons/card types/equipment_icon.png")
+			return "${Equipment}"
 			
 		_:
 			push_error("Nonexistent card type")
@@ -55,5 +55,6 @@ func load_faction_texture(faction:Faction):
 		_:
 			push_error("Nonexistent faction type")
 			return load("res://icon.svg")
+
 func load_card_art():
 	return load(cardArt)

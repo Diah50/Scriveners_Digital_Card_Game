@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnkm6nq6cov18"]
+[gd_scene load_steps=3 format=3 uid="uid://dnkm6nq6cov18"]
 
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_oumlu"]
 [ext_resource type="Texture2D" uid="uid://caau1gmebhbhr" path="res://assets/textures/Scriveners_Logo.png" id="2_c5e27"]
-[ext_resource type="PackedScene" uid="uid://eik7hn8vmhxq" path="res://scenes/tools/scriveners_rich_text_label.tscn" id="3_jee3u"]
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_oumlu")
@@ -41,35 +40,6 @@ offset_top = 458.0
 offset_right = 669.0
 offset_bottom = 538.0
 text = "Quit"
-
-[node name="ScrivenersRichTextLabel" parent="." instance=ExtResource("3_jee3u")]
-visible = false
-offset_left = 5.0
-offset_top = 11.0
-offset_right = 970.0
-offset_bottom = 685.0
-text = "The [hint={tooltip text displayed on hover}]sky[/hint] is [color=blue]blue[/color]  
-Cool image [img={width}24{height}]res://assets/textures/Icons/card types/card_icon.png[/img] 
-
-
-${heart} 
-
-There are six resources/factions/colors/aspects. 
-[img={width}24{height}]res://assets/textures/Icons/factions/mini_ingenuity.png[/img] , [img={width}24{height}]res://assets/textures/Icons/factions/mini_endurance.png[/img], [img={width}24{height}]res://assets/textures/Icons/factions/mini_strength.png[/img], [img={width}24{height}]res://assets/textures/Icons/factions/mini_hegemony.png[/img], [img={width}24{height}]res://assets/textures/Icons/factions/mini_ambition.png[/img], and [img={width}24{height}]res://assets/textures/Icons/factions/mini_tenacity.png[/img].
-
-There are also 6 card types
-[img={width}24{height}]res://assets/textures/Icons/card types/card_icon.png[/img], [img={width}24{height}]res://assets/textures/Icons/factions/support_icon.png[/img], [img={width}24{height}]res://assets/textures/Icons/card types/equipment_icon.png[/img], [img={width}24{height}]res://assets/textures/Icons/card types/location_icon.png[/img], [img={width}24{height}]res://assets/textures/Icons/card types/commander_icon.png[/img], [img={width}24{height}]res://assets/textures/Icons/card types/unit_icon.png[/img] Unit
-
-Finally we have 
-Power [img={width}24{height}]res://assets/textures/Icons/power_icon.png[/img] and Heart [img={width}24{height}]res://assets/textures/Icons/heart_icon.png[/img]
-
-Now it's time to [font=res://assets/fonts/laila/Laila-Bold.ttf][b]Burst[/b][/font] and get [font=res://assets/fonts/laila/Laila-Bold.ttf][b]Revenge[/b][/font] on you oppent
-
-[img={width}24{height}]res://assets/textures/Icons/heart_icon.png[/img] [img={width}24{height}]res://assets/textures/Icons/factions/mini_endurance.png[/img]
-
-
-
-"
 
 [connection signal="button_up" from="Control/Start_btm" to="." method="_on_start_btm_button_up"]
 [connection signal="button_up" from="Control/Settings_btm" to="." method="_on_settings_btm_button_up"]
