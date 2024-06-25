@@ -8,6 +8,14 @@ Henry Ha(Diahborne) - Lead Artist/Game Director
 
 Strangerside - Narrative Writer/Designer
 
+Gideonexadventurer - Narrative Writer/Designer
+
+Brendan(beaker of fish) - Designer
+
+Zyxthezyx - Designer
+
+Raphaël, Master of Pride(master_of_pride) - Designer
+
 IceofSpade {glacialspade} - Programmer
 
 Sayomi - Programmer
@@ -21,12 +29,6 @@ Valgumir(valgumir) - Programmer
 JousefXLucifer(jousefxlucifer) - Programmer
 
 The_Ace_Arguer - Management Consultant
-
-Brendan(beaker of fish) - Designer
-
-Zyxthezyx - Designer
-
-Raphaël, Master of Pride(master_of_pride) - Designer
 
 pluckine - Artist
 
