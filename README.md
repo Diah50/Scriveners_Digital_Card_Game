@@ -18,17 +18,21 @@ Tony(Edenboy) - Programmer
 
 Valgumir(valgumir) - Programmer
 
+JousefXLucifer(jousefxlucifer) - Programmer
+
 The_Ace_Arguer - Management Consultant
 
 Brendan(beaker of fish) - Designer
 
 Zyxthezyx - Designer
 
-Master_of_pride - Designer
+Raphaël, Master of Pride(master_of_pride) - Designer
 
 pluckine - Artist
 
 Issac(mototear5917) - Artist
 
 Sketchlord2(sketchyirregulord) - Artist
+
+Riley g(rileyg_) - Sound Designer/Composer
 
