@@ -14,5 +14,6 @@ Using Angen by Teifion - https://github.com/Teifion/angen?tab=readme-ov-file
 
 **Artists** - pluckine, Issac(mototear5917), Sketchlord2(sketchyirregulord)
 
-**Sound Designer/Composer** - Riley g(rileyg_) 
+**Sound Designer/Composer** - lou(lou1141)
+
 
