@@ -3,38 +3,16 @@ A Grid-based Tactical card game with an emphasis on community-creation.
 
 Using Angen by Teifion - https://github.com/Teifion/angen?tab=readme-ov-file
 
-### Credits 
-Henry Ha(Diahborne) - Lead Artist/Game Director
+### Credits  
+**Lead Artist/Game Director** - Henry Ha(Diahborne) 
 
-Strangerside - Narrative Writer/Designer
+**Narrative Writers/Designers** - Strangerside, Gideon Milburn (Gideonexadventurer)_, Brendan(beaker of fish), Zyxthezyx, 
 
-Gideonexadventurer - Narrative Writer/Designer
+**Programmers** - IceofSpade {glacialspade}, Sayomi, Magneter, Tony(Edenboy), Valgumir(valgumir), JousefXLucifer(jousefxlucifer) 
 
-Brendan(beaker of fish) - Designer
+**Management Consultant** - The_Ace_Arguer 
 
-Zyxthezyx - Designer
+**Artists** - pluckine, Issac(mototear5917), Sketchlord2(sketchyirregulord)
 
-Raphaël, Master of Pride(master_of_pride) - Designer
-
-IceofSpade {glacialspade} - Programmer
-
-Sayomi - Programmer
-
-Magneter - Programmer
-
-Tony(Edenboy) - Programmer
-
-Valgumir(valgumir) - Programmer
-
-JousefXLucifer(jousefxlucifer) - Programmer
-
-The_Ace_Arguer - Management Consultant
-
-pluckine - Artist
-
-Issac(mototear5917) - Artist
-
-Sketchlord2(sketchyirregulord) - Artist
-
-Riley g(rileyg_) - Sound Designer/Composer
+**Sound Designer/Composer** - Riley g(rileyg_) 
 
