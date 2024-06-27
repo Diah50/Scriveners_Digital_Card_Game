@@ -12,8 +12,8 @@ var keyWords = [
 ]
 @export var iconSize = 24
 
-var lastTest = ""
-var lastIconSize = iconSize
+var last_text = ""
+var last_icon_size = iconSize
 
 func _ready():
 	bbcode_enabled = true
@@ -27,9 +27,10 @@ func complile_text():
 		text = regex.sub(text,load_text_effect(key),true)
 
 func _process(_delta):
-	if lastTest != text or iconSize != lastIconSize:
-		lastTest = text
-		lastIconSize = iconSize
+	# Recompile on text change
+	if last_text != text or iconSize != last_icon_size:
+		last_text = text
+		last_icon_size = iconSize
 		complile_text()
 
 func load_text_effect(_key:String):

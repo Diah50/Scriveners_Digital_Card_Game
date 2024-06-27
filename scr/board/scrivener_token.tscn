@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bmfdldsyxwnk"]
 
-[ext_resource type="Script" path="res://scenes/scrivener_token.gd" id="1_fve8e"]
-[ext_resource type="Texture2D" uid="uid://difxuhmw3l4jm" path="res://icon.svg" id="1_j85cs"]
+[ext_resource type="Script" path="res://scr/board/scrivener_token.gd" id="1_0vdck"]
+[ext_resource type="Texture2D" uid="uid://difxuhmw3l4jm" path="res://icon.svg" id="2_0md0y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf1sb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -39,7 +39,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 140.0
 offset_bottom = 140.0
-script = ExtResource("1_fve8e")
+script = ExtResource("1_0vdck")
 
 [node name="PanelContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(140, 140)
@@ -49,7 +49,7 @@ offset_bottom = 40.0
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_j85cs")
+texture_normal = ExtResource("2_0md0y")
 stretch_mode = 0
 
 [node name="Panel" type="Panel" parent="PanelContainer"]

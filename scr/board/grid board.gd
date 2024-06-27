@@ -19,13 +19,8 @@ func get_grid_cell(pos:Vector2i):
 	for y in grid.get_children().size()/grid_size.y:
 		var row = []
 		for x in grid.get_children().size()/grid_size.x:
-			if y == 0:
-				row.append(grid.get_child(x+y))
-			elif x == 0:
-				row.append(grid.get_child((x+y)+y))
-			else:
-				row.append(grid.get_child(x*y))
-			print(Vector2(x,y))
+			row.append(grid.get_child(x*y))
+			
 		grid_box.append(row)
 
 

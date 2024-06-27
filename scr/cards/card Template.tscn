@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://cw7ye7msiyejp"]
 
-[ext_resource type="Script" path="res://scenes/card Template.gd" id="1_btga0"]
-[ext_resource type="Texture2D" uid="uid://c7ncr1xoec8ni" path="res://assets/textures/SCG_Card_Frame.png" id="2_27p0o"]
-[ext_resource type="PackedScene" uid="uid://eik7hn8vmhxq" path="res://scenes/tools/scriveners_rich_text_label.tscn" id="3_hl17v"]
-[ext_resource type="Texture2D" uid="uid://ugct8o3ae41s" path="res://assets/textures/Icons/power_icon.png" id="3_idafw"]
-[ext_resource type="Texture2D" uid="uid://yvmoavymhnbc" path="res://assets/textures/Icons/heart_icon.png" id="4_7x4wq"]
-[ext_resource type="Texture2D" uid="uid://difxuhmw3l4jm" path="res://icon.svg" id="4_gb84i"]
-[ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/factions/ingenuity_icon.png" id="4_n54b8"]
+[ext_resource type="Script" path="res://scr/cards/card Template.gd" id="1_dq7io"]
+[ext_resource type="Texture2D" uid="uid://c7ncr1xoec8ni" path="res://assets/textures/SCG_Card_Frame.png" id="2_eqb1k"]
+[ext_resource type="PackedScene" uid="uid://eik7hn8vmhxq" path="res://scr/tools/scriveners_rich_text_label.tscn" id="3_m5x4u"]
+[ext_resource type="Texture2D" uid="uid://difxuhmw3l4jm" path="res://icon.svg" id="4_kqsee"]
+[ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/factions/ingenuity_icon.png" id="5_ut3ux"]
+[ext_resource type="Texture2D" uid="uid://ugct8o3ae41s" path="res://assets/textures/Icons/power_icon.png" id="6_4ahjv"]
+[ext_resource type="Texture2D" uid="uid://yvmoavymhnbc" path="res://assets/textures/Icons/heart_icon.png" id="7_3h58n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fudf"]
 bg_color = Color(1, 1, 1, 1)
@@ -40,7 +40,7 @@ font_size = 45
 font_color = Color(0, 0, 0, 1)
 
 [node name="CardTemplate" type="Node2D"]
-script = ExtResource("1_btga0")
+script = ExtResource("1_dq7io")
 metadata/_edit_vertical_guides_ = [-480.0, 480.0, -121.0, 120.0]
 metadata/_edit_horizontal_guides_ = [-672.0, 672.0, -168.0, 168.0]
 
@@ -78,7 +78,7 @@ custom_minimum_size = Vector2(960, 1344)
 layout_mode = 0
 offset_right = 960.0
 offset_bottom = 1344.0
-texture = ExtResource("2_27p0o")
+texture = ExtResource("2_eqb1k")
 
 [node name="Description box" type="MarginContainer" parent="Control/background/Panel"]
 layout_mode = 0
@@ -91,7 +91,7 @@ offset_bottom = 1276.0
 custom_minimum_size = Vector2(720, 435)
 layout_mode = 2
 
-[node name="descriptionText" parent="Control/background/Panel/Description box/GridContainer" instance=ExtResource("3_hl17v")]
+[node name="descriptionText" parent="Control/background/Panel/Description box/GridContainer" instance=ExtResource("3_m5x4u")]
 custom_minimum_size = Vector2(445, 338)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -107,7 +107,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="flavorText" parent="Control/background/Panel/Description box/GridContainer/MarginContainer" instance=ExtResource("3_hl17v")]
+[node name="flavorText" parent="Control/background/Panel/Description box/GridContainer/MarginContainer" instance=ExtResource("3_m5x4u")]
 custom_minimum_size = Vector2(487, 62)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -123,7 +123,7 @@ offset_bottom = 612.0
 
 [node name="cardImage" type="TextureRect" parent="Control/background/Panel/Image window"]
 layout_mode = 2
-texture = ExtResource("4_gb84i")
+texture = ExtResource("4_kqsee")
 expand_mode = 1
 stretch_mode = 6
 
@@ -145,7 +145,7 @@ size_flags_horizontal = 0
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("4_n54b8")
+texture = ExtResource("5_ut3ux")
 expand_mode = 1
 stretch_mode = 5
 
@@ -165,7 +165,7 @@ text = "Name"
 label_settings = SubResource("LabelSettings_4xy22")
 horizontal_alignment = 1
 
-[node name="subtypeText" parent="Control/background/Panel/header/HBoxContainer/name and types" instance=ExtResource("3_hl17v")]
+[node name="subtypeText" parent="Control/background/Panel/header/HBoxContainer/name and types" instance=ExtResource("3_m5x4u")]
 custom_minimum_size = Vector2(540, 95)
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -182,7 +182,7 @@ offset_bottom = 1303.0
 
 [node name="TextureRect" type="TextureRect" parent="Control/background/Panel/Power"]
 layout_mode = 2
-texture = ExtResource("3_idafw")
+texture = ExtResource("6_4ahjv")
 expand_mode = 1
 
 [node name="powerText" type="Label" parent="Control/background/Panel/Power/TextureRect"]
@@ -205,7 +205,7 @@ offset_bottom = 1303.0
 
 [node name="TextureRect" type="TextureRect" parent="Control/background/Panel/Heart"]
 layout_mode = 2
-texture = ExtResource("4_7x4wq")
+texture = ExtResource("7_3h58n")
 expand_mode = 1
 
 [node name="heartText" type="Label" parent="Control/background/Panel/Heart/TextureRect"]

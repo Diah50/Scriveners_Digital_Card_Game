@@ -1,26 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://bstnmbxxb6vjl"]
+[gd_scene load_steps=10 format=3 uid="uid://bstnmbxxb6vjl"]
 
-[ext_resource type="Texture2D" uid="uid://tw174putly5o" path="res://assets/textures/scriveners_blue_gameboard.png" id="1_wtc43"]
-[ext_resource type="Texture2D" uid="uid://celnvls65dms5" path="res://assets/textures/scriveners_red_gameboard.png" id="2_58k5e"]
-[ext_resource type="PackedScene" uid="uid://dad04w52u8fsc" path="res://scenes/card_controler.tscn" id="3_2t3kg"]
-[ext_resource type="Script" path="res://scenes/grid board.gd" id="3_6oayu"]
-[ext_resource type="Script" path="res://scenes/Display Card.gd" id="5_l8mc8"]
-[ext_resource type="PackedScene" uid="uid://cw7ye7msiyejp" path="res://scenes/card Template.tscn" id="5_tjyk3"]
+[ext_resource type="Texture2D" uid="uid://tw174putly5o" path="res://assets/textures/scriveners_blue_gameboard.png" id="1_6kihm"]
+[ext_resource type="Texture2D" uid="uid://celnvls65dms5" path="res://assets/textures/scriveners_red_gameboard.png" id="2_xk524"]
+[ext_resource type="Script" path="res://scr/board/grid board.gd" id="3_o1sgy"]
+[ext_resource type="PackedScene" uid="uid://dad04w52u8fsc" path="res://scr/board/card_controler.tscn" id="4_qnc0f"]
+[ext_resource type="Script" path="res://scr/board/Display Card.gd" id="5_tcvxb"]
+[ext_resource type="PackedScene" uid="uid://cw7ye7msiyejp" path="res://scr/cards/card Template.tscn" id="6_7383x"]
+[ext_resource type="Script" path="res://global scripts/cardResource.gd" id="7_lohsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlbjt"]
+
+[sub_resource type="Resource" id="Resource_2u2dp"]
+script = ExtResource("7_lohsb")
+cardName = ""
+cost = 0
+cardType = 0
+faction = 0
+subtype = ""
+power = 0
+heart = 0
+description = ""
+flovorText = ""
+artistName = ""
+moveSpeed = 1
 
 [node name="Gameboard" type="Node2D"]
 
 [node name="ScrivenersBlueGameboard" type="Sprite2D" parent="."]
 position = Vector2(637.5, 538.768)
 scale = Vector2(0.666, 0.666)
-texture = ExtResource("1_wtc43")
+texture = ExtResource("1_6kihm")
 
 [node name="ScrivenersRedGameboard" type="Sprite2D" parent="."]
 position = Vector2(637.776, 171.268)
 rotation = 3.14159
 scale = Vector2(0.666, 0.664)
-texture = ExtResource("2_58k5e")
+texture = ExtResource("2_xk524")
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -218,7 +233,7 @@ offset_bottom = 815.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
-script = ExtResource("3_6oayu")
+script = ExtResource("3_o1sgy")
 
 [node name="GridContainer" type="GridContainer" parent="grid board"]
 layout_mode = 0
@@ -428,12 +443,13 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
 
-[node name="Card Controler" parent="." instance=ExtResource("3_2t3kg")]
+[node name="Card Controler" parent="." instance=ExtResource("4_qnc0f")]
 position = Vector2(599, 703)
 
 [node name="Display Card" type="Node2D" parent="."]
 position = Vector2(164, 210)
-script = ExtResource("5_l8mc8")
+script = ExtResource("5_tcvxb")
 
-[node name="CardTemplate" parent="Display Card" instance=ExtResource("5_tjyk3")]
+[node name="CardTemplate" parent="Display Card" instance=ExtResource("6_7383x")]
 scale = Vector2(3, 3)
+cardInfo = SubResource("Resource_2u2dp")

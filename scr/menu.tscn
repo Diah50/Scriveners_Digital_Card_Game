@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnkm6nq6cov18"]
 
-[ext_resource type="Script" path="res://scenes/menu.gd" id="1_oumlu"]
-[ext_resource type="Texture2D" uid="uid://caau1gmebhbhr" path="res://assets/textures/Scriveners_Logo.png" id="2_c5e27"]
+[ext_resource type="Script" path="res://scr/menu.gd" id="1_4i22g"]
+[ext_resource type="Texture2D" uid="uid://caau1gmebhbhr" path="res://assets/textures/Scriveners_Logo.png" id="2_m6vb4"]
 
 [node name="menu" type="Node2D"]
-script = ExtResource("1_oumlu")
+script = ExtResource("1_4i22g")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -15,7 +15,7 @@ offset_bottom = 644.0
 [node name="Label" type="Sprite2D" parent="Control"]
 position = Vector2(566, 143)
 scale = Vector2(0.219444, 0.219444)
-texture = ExtResource("2_c5e27")
+texture = ExtResource("2_m6vb4")
 
 [node name="Start_btm" type="Button" parent="Control"]
 layout_mode = 0
