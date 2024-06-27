@@ -52,13 +52,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -121.0
-offset_top = -168.0
-offset_right = 839.0
-offset_bottom = 1176.0
+offset_left = -47.0
+offset_top = -69.0
+offset_right = 913.0
+offset_bottom = 1275.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.1, 0.1)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_group_ = true
@@ -237,3 +237,12 @@ label_settings = SubResource("LabelSettings_2lyuj")
 layout_mode = 2
 text = "Name"
 label_settings = SubResource("LabelSettings_2lyuj")
+
+[node name="TextureButton" type="TextureButton" parent="Control/background"]
+modulate = Color(1, 1, 0.34902, 1)
+layout_mode = 2
+
+[connection signal="button_down" from="Control/background/TextureButton" to="." method="_on_texture_button_button_down"]
+[connection signal="button_up" from="Control/background/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="mouse_entered" from="Control/background/TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/background/TextureButton" to="." method="_on_texture_button_mouse_exited"]

@@ -32,8 +32,8 @@ func _process(_delta):
 		lastIconSize = iconSize
 		complile_text()
 
-func load_text_effect(text:String):
-	match text:
+func load_text_effect(_key:String):
+	match _key:
 		"Ingenuity":
 			return "[img={width}"+str(iconSize)+"{height}]{res://assets/textures/Icons/factions/mini_ingenuity.png}[/img]"
 		"Endurance": 

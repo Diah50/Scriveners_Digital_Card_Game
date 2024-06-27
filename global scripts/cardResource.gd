@@ -14,7 +14,7 @@ enum CardType {CARD,COMMANDER,LOCATION,SUPPORT,NEUTRAL,EQUIPMENT}
 @export var description:String
 @export var flovorText:String
 @export var artistName:String
-@export var cardArt:String
+@export var cardArt:CompressedTexture2D
 @export var moveSpeed:int = 1
 
 func load_card_type(type:CardType):
@@ -36,8 +36,8 @@ func load_card_type(type:CardType):
 			push_error("Nonexistent card type")
 			return load("res://icon.svg")
 		
-func load_faction_texture(faction:Faction):
-	match faction:
+func load_faction_texture(faction_type:Faction):
+	match faction_type:
 		Faction.AMBITION:
 			return load("res://assets/textures/Icons/factions/ambition_icon.png")
 		Faction.INGENUITY:
@@ -56,5 +56,5 @@ func load_faction_texture(faction:Faction):
 			push_error("Nonexistent faction type")
 			return load("res://icon.svg")
 
-func load_card_art():
-	return load(cardArt)
+#func load_card_art():
+	#return load(cardArt)
