@@ -5,9 +5,11 @@ Using Angen by Teifion - https://github.com/Teifion/angen?tab=readme-ov-file
 
 ### Credits  
 **Lead Artist/Game Designer/Story Writer**
+
 Henry Ha(Diahborne) 
 
 **Project Manager/Game Designer/Story Writer**
+
 Gideon Milburn (Gideonexadventurer)
 
 **Lead Programmer**
