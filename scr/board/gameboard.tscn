@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://celnvls65dms5" path="res://assets/textures/scriveners_red_gameboard.png" id="2_xk524"]
 [ext_resource type="Script" path="res://scr/board/grid board.gd" id="3_o1sgy"]
 [ext_resource type="PackedScene" uid="uid://dad04w52u8fsc" path="res://scr/board/card_controler.tscn" id="4_qnc0f"]
+[ext_resource type="PackedScene" uid="uid://bjceh21mr8vpu" path="res://scr/board/grid cell.tscn" id="4_w35ts"]
 [ext_resource type="Script" path="res://scr/board/Display Card.gd" id="5_tcvxb"]
 [ext_resource type="PackedScene" uid="uid://cw7ye7msiyejp" path="res://scr/cards/card Template.tscn" id="6_7383x"]
 [ext_resource type="Script" path="res://global scripts/cardResource.gd" id="7_lohsb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlbjt"]
 
 [sub_resource type="Resource" id="Resource_2u2dp"]
 script = ExtResource("7_lohsb")
@@ -22,6 +21,7 @@ heart = 0
 description = ""
 flovorText = ""
 artistName = ""
+cardArt = ""
 moveSpeed = 1
 
 [node name="Gameboard" type="Node2D"]
@@ -37,416 +37,138 @@ rotation = 3.14159
 scale = Vector2(0.666, 0.664)
 texture = ExtResource("2_xk524")
 
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Tile1" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 264.0
-offset_top = 40.0
-offset_right = 372.0
-offset_bottom = 148.0
-
-[node name="Tile2" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 40.0
-offset_right = 500.0
-offset_bottom = 148.0
-
-[node name="Tile3" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 40.0
-offset_right = 628.0
-offset_bottom = 148.0
-
-[node name="Tile4" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 648.0
-offset_top = 40.0
-offset_right = 756.0
-offset_bottom = 148.0
-
-[node name="Tile5" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 776.0
-offset_top = 40.0
-offset_right = 884.0
-offset_bottom = 148.0
-
-[node name="Tile6" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 266.0
-offset_top = 279.0
-offset_right = 374.0
-offset_bottom = 387.0
-
-[node name="Tile7" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 394.0
-offset_top = 279.0
-offset_right = 502.0
-offset_bottom = 387.0
-
-[node name="Tile8" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 279.0
-offset_right = 630.0
-offset_bottom = 387.0
-
-[node name="Tile9" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 650.0
-offset_top = 279.0
-offset_right = 758.0
-offset_bottom = 387.0
-
-[node name="Tile10" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 778.0
-offset_top = 279.0
-offset_right = 886.0
-offset_bottom = 387.0
-
-[node name="Tile11" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 264.0
-offset_top = 160.0
-offset_right = 372.0
-offset_bottom = 268.0
-
-[node name="Tile12" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 160.0
-offset_right = 500.0
-offset_bottom = 268.0
-
-[node name="Tile13" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 520.0
-offset_top = 160.0
-offset_right = 628.0
-offset_bottom = 268.0
-
-[node name="Tile14" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 648.0
-offset_top = 160.0
-offset_right = 756.0
-offset_bottom = 268.0
-
-[node name="Tile15" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 776.0
-offset_top = 160.0
-offset_right = 884.0
-offset_bottom = 268.0
-
-[node name="Tile16" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 266.0
-offset_top = 394.0
-offset_right = 374.0
-offset_bottom = 502.0
-
-[node name="Tile17" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 394.0
-offset_top = 394.0
-offset_right = 502.0
-offset_bottom = 502.0
-
-[node name="Tile18" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 394.0
-offset_right = 630.0
-offset_bottom = 502.0
-
-[node name="Tile19" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 650.0
-offset_top = 394.0
-offset_right = 758.0
-offset_bottom = 502.0
-
-[node name="Tile20" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 778.0
-offset_top = 394.0
-offset_right = 886.0
-offset_bottom = 502.0
-
-[node name="Tile21" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 266.0
-offset_top = 512.0
-offset_right = 374.0
-offset_bottom = 620.0
-
-[node name="Tile22" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 394.0
-offset_top = 512.0
-offset_right = 502.0
-offset_bottom = 620.0
-
-[node name="Tile23" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 512.0
-offset_right = 630.0
-offset_bottom = 620.0
-
-[node name="Tile24" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 650.0
-offset_top = 512.0
-offset_right = 758.0
-offset_bottom = 620.0
-
-[node name="Tile25" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_left = 778.0
-offset_top = 512.0
-offset_right = 886.0
-offset_bottom = 620.0
-
-[node name="grid board" type="Control" parent="."]
+[node name="grid board" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 358.0
-offset_top = 80.0
-offset_right = 1098.0
-offset_bottom = 815.0
+offset_left = -282.0
+offset_top = -280.0
+offset_right = 458.0
+offset_bottom = 455.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.75, 0.75)
 script = ExtResource("3_o1sgy")
 
-[node name="GridContainer" type="GridContainer" parent="grid board"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/grid board"]
 layout_mode = 0
 offset_right = 716.0
 offset_bottom = 716.0
+mouse_force_pass_scroll_events = false
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 9
 columns = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer"]
+[node name="grid cell2" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer2" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell3" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer2"]
+[node name="grid cell4" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer3" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell5" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer3"]
+[node name="grid cell6" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer4" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell7" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer4"]
+[node name="grid cell8" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer5" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell9" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer5"]
+[node name="grid cell10" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer6" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell11" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer6"]
+[node name="grid cell12" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer7" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell13" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer7"]
+[node name="grid cell14" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer8" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell15" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer8"]
+[node name="grid cell16" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer9" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell17" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer9"]
+[node name="grid cell18" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer10" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell19" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer10"]
+[node name="grid cell20" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer11" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell21" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer11"]
+[node name="grid cell22" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer12" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell23" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
+mouse_filter = 0
 
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer12"]
+[node name="grid cell24" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
-[node name="MarginContainer13" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
+[node name="grid cell25" parent="CanvasLayer/grid board/GridContainer" instance=ExtResource("4_w35ts")]
 layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer13"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer14" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer14"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer15" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer15"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer16" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer16"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer17" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer17"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer18" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer18"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer19" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer19"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer20" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer20"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer21" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer21"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer22" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer22"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer23" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer23"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer24" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer24"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
-
-[node name="MarginContainer25" type="MarginContainer" parent="grid board/GridContainer"]
-custom_minimum_size = Vector2(140, 140)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="grid board/GridContainer/MarginContainer25"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rlbjt")
+mouse_filter = 0
 
 [node name="Card Controler" parent="." instance=ExtResource("4_qnc0f")]
 position = Vector2(599, 703)
 
 [node name="Display Card" type="Node2D" parent="."]
+visible = false
 position = Vector2(164, 210)
 script = ExtResource("5_tcvxb")
 

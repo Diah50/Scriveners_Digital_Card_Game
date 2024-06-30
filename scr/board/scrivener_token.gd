@@ -8,12 +8,12 @@ var token_data:CardData
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if token_data:
-		power_text.text = token_data.power_text
-		heath_text.text = token_data.heath_text
-		token_art.texture_normal = token_data.token_art
+		power_text.text = str(token_data.power)
+		heath_text.text = str(token_data.heart)
+		token_art.texture_normal = await token_data.load_card_art()
 
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 

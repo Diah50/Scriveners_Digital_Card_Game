@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_start_btm_button_up():
-	get_tree().change_scene_to_file("res://scenes/gameboard.tscn")
+	get_tree().change_scene_to_file("res://scr/board/gameboard.tscn")
 	pass # Replace with function body.
 
 

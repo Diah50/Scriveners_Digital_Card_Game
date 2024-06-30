@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmfdldsyxwnk"]
+[gd_scene load_steps=6 format=3 uid="uid://bmfdldsyxwnk"]
 
 [ext_resource type="Script" path="res://scr/board/scrivener_token.gd" id="1_0vdck"]
-[ext_resource type="Texture2D" uid="uid://difxuhmw3l4jm" path="res://icon.svg" id="2_0md0y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf1sb"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -33,23 +32,23 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [node name="Scrivener Token" type="Control"]
-modulate = Color(0.431373, 0.431373, 0.431373, 1)
-custom_minimum_size = Vector2(140, 140)
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 140.0
 offset_bottom = 140.0
+mouse_filter = 2
 script = ExtResource("1_0vdck")
 
 [node name="PanelContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(140, 140)
+custom_minimum_size = Vector2(130, 130)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer"]
 layout_mode = 2
-texture_normal = ExtResource("2_0md0y")
 stretch_mode = 0
 
 [node name="Panel" type="Panel" parent="PanelContainer"]
@@ -59,10 +58,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xf1sb")
 [node name="power" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 31.0
-offset_bottom = 30.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 30.0
+offset_bottom = 29.0
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="power"]
 layout_mode = 2
@@ -79,10 +79,11 @@ vertical_alignment = 1
 [node name="heart" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 0
-offset_left = 109.0
-offset_top = 5.0
-offset_right = 135.0
-offset_bottom = 30.0
+offset_left = 100.0
+offset_top = 4.0
+offset_right = 126.0
+offset_bottom = 29.0
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="heart"]
 layout_mode = 2

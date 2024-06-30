@@ -12,7 +12,8 @@ class_name CardTemplate
 @onready var cardArt = $"Control/background/Panel/Image window/cardImage"
 @onready var artistName = $Control/background/Panel/ArtistTage/artistName
 
-
+@onready var area2d = $Area2D
+@onready var scrivener_token = preload("res://scr/board/scrivener_token.tscn")
 @export var cardInfo:CardData
 
 #@onready var max_health = cardInfo.heart
@@ -28,6 +29,7 @@ var originalPos:Vector2
 var originalRot:float
 
 var is_held = false
+
 
 func _ready():
 	if !cardInfo:
@@ -50,10 +52,19 @@ func update_card_visuals():
 	heart.text = str(cardInfo.heart)
 	description.text = cardInfo.description
 	flovorText.text = cardInfo.flovorText
-	cardArt.texture = cardInfo.cardArt
+	cardArt.texture = await cardInfo.load_card_art()
 	artistName.text = cardInfo.artistName
 	
 
+func check_placeable():
+	var areas = area2d.get_overlapping_areas()
+	for area in areas:
+		if area.get_parent().is_in_group("cell"):
+			var token = scrivener_token.instantiate()
+			token.token_data = cardInfo
+			area.get_parent().get_node("Token container").add_child(token)
+
+			break
 
 func _on_texture_button_mouse_entered():
 	print("in")
@@ -74,6 +85,7 @@ func _on_texture_button_button_up():
 	is_held = false
 	position = originalPos
 	rotation = originalRot
+	check_placeable()
 	pass # Replace with function body.
 
 func _on_texture_button_button_down():

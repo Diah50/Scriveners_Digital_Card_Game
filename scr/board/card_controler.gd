@@ -19,7 +19,6 @@ func _ready():
 	creat_hand()
 	reorganise_hand()
 
-
 func creat_hand():
 	var newCard:CardData = CardData.new()
 	newCard.cardName = "Dev Card"
@@ -33,15 +32,14 @@ func creat_hand():
 	newCard.flovorText = "Tested flovor"
 	newCard.artistName = ""
 	newCard.moveSpeed = 1
-	newCard.cardArt = load("res://icon.svg")
+	newCard.cardArt = "res://icon.svg"
 	
 	print(newCard.moveSpeed)
 
 	for _i in range(5):
 		create_card(newCard)
 
-
-func create_card(card_data):
+func create_card(card_data:CardData):
 	if !card_data:
 		push_error("No card data given ")
 		return
@@ -51,15 +49,14 @@ func create_card(card_data):
 	newCard.cardInfo = card_data
 	newCard.originalPos = (centrel_card_oval + oval_angle_vector)
 	newCard.originalRot = (90 - rad_to_deg(angle))/8
-
 	newCard.position = newCard.originalPos
 	newCard.rotation = newCard.originalRot
 
 	add_child(newCard)
 	hand.append(newCard)
 	newCard.update_card_visuals()
-	return newCard
 
+	return newCard
 
 func reorganise_hand():
 	var cards_sorted = 0

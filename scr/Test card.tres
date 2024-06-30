@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=3 format=3 uid="uid://bmuj6b7r0i3g7"]
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://bmuj6b7r0i3g7"]
 
 [ext_resource type="Script" path="res://global scripts/cardResource.gd" id="1_6kmq4"]
-[ext_resource type="Texture2D" uid="uid://difxuhmw3l4jm" path="res://icon.svg" id="1_7jy5t"]
 
 [resource]
 script = ExtResource("1_6kmq4")
@@ -15,5 +14,5 @@ heart = 66
 description = "This is a dev card made for testing"
 flovorText = "Tested flovor"
 artistName = ""
-cardArt = ExtResource("1_7jy5t")
+cardArt = "res://icon.svg"
 moveSpeed = 1

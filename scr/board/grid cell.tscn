@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjceh21mr8vpu"]
+
+[ext_resource type="Script" path="res://scr/board/grid cell.gd" id="1_gup62"]
+[ext_resource type="PackedScene" uid="uid://bmfdldsyxwnk" path="res://scr/board/scrivener_token.tscn" id="2_akb0n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obtax"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2rye"]
+size = Vector2(130, 130)
+
+[node name="grid cell" type="PanelContainer" groups=["cell"]]
+clip_contents = true
+custom_minimum_size = Vector2(140, 140)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_obtax")
+script = ExtResource("1_gup62")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Token container" type="MarginContainer" parent="."]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Scrivener Token" parent="Token container" instance=ExtResource("2_akb0n")]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(70, 70)
+shape = SubResource("RectangleShape2D_o2rye")
