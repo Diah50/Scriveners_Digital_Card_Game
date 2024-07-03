@@ -14,6 +14,8 @@ Gideon Milburn (Gideonexadventurer)
 
 **Lead Programmer**
 
+(IceOfspade)
+
 **Assistant Programmer**
 
 **Dedicated Artist**
