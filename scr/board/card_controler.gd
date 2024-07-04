@@ -21,15 +21,15 @@ func _ready():
 
 func creat_hand():
 	var newCard:CardData = CardData.new()
-	newCard.cardName = "Dev Card"
+	newCard.cardName = "Dev Card2"
 	newCard.cost = 1
-	newCard.cardType = CardData.CardType.CARD
+	newCard.cardType = CardData.CardType.COMMANDER
 	newCard.faction = CardData.Faction.AMBITION
 	newCard.subtype = "Dev card"
-	newCard.power = 99
-	newCard.heart = 66
+	newCard.power = 900
+	newCard.heart = 69
 	newCard.description = "This is a dev card made for testing"
-	newCard.flovorText = "Tested flovor"
+	newCard.flovorText = "Some Text a guy wrote"
 	newCard.artistName = ""
 	newCard.moveSpeed = 1
 	newCard.cardArt = "res://icon.svg"

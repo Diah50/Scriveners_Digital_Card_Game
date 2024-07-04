@@ -1,7 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjceh21mr8vpu"]
+[gd_scene load_steps=7 format=3 uid="uid://bjceh21mr8vpu"]
 
+[ext_resource type="Shader" path="res://scr/board/outline.gdshader" id="1_ffb51"]
 [ext_resource type="Script" path="res://scr/board/grid cell.gd" id="1_gup62"]
-[ext_resource type="PackedScene" uid="uid://bmfdldsyxwnk" path="res://scr/board/scrivener_token.tscn" id="2_akb0n"]
+[ext_resource type="PackedScene" uid="uid://c155kouaiq1lu" path="res://scr/board/arrow head.tscn" id="3_rfm4b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0pye"]
+resource_local_to_scene = true
+shader = ExtResource("1_ffb51")
+shader_parameter/color = Color(0.239216, 0.466667, 0.835294, 1)
+shader_parameter/width = 0.25
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/is_active = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obtax"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -15,11 +26,11 @@ border_color = Color(0, 0, 0, 1)
 size = Vector2(130, 130)
 
 [node name="grid cell" type="PanelContainer" groups=["cell"]]
-clip_contents = true
+material = SubResource("ShaderMaterial_p0pye")
 custom_minimum_size = Vector2(140, 140)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-mouse_filter = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_obtax")
 script = ExtResource("1_gup62")
 
@@ -33,15 +44,25 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Scrivener Token" parent="Token container" instance=ExtResource("2_akb0n")]
-layout_mode = 2
-
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 2
 mouse_filter = 1
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(70, 70)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(70, 70)
 shape = SubResource("RectangleShape2D_o2rye")
+
+[node name="Arrow" parent="." instance=ExtResource("3_rfm4b")]
+visible = false
+position = Vector2(70, 70)
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_button_down"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_mouse_entered_cell"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_mouse_exited_cell"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

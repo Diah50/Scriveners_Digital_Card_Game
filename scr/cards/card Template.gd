@@ -48,14 +48,16 @@ func update_card_visuals():
 	cost.text = str(cardInfo.cost)
 	faction.texture = await cardInfo.load_faction_texture(cardInfo.faction)
 	subtype.text =  await cardInfo.load_card_type(cardInfo.cardType)+" "+cardInfo.subtype
+	subtype.complile_text()
 	power.text = str(cardInfo.power)
 	heart.text = str(cardInfo.heart)
 	description.text = cardInfo.description
+	description.complile_text()
 	flovorText.text = cardInfo.flovorText
+	flovorText.complile_text()
 	cardArt.texture = await cardInfo.load_card_art()
 	artistName.text = cardInfo.artistName
 	
-
 func check_placeable():
 	var areas = area2d.get_overlapping_areas()
 	for area in areas:

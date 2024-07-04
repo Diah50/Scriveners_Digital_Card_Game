@@ -43,8 +43,8 @@ script = ExtResource("1_0vdck")
 [node name="PanelContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 130.0
+offset_bottom = 130.0
 mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="PanelContainer"]
