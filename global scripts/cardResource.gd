@@ -49,7 +49,7 @@ func load_faction_texture(faction_type:Faction):
 		Faction.TENACITY:
 			return load("res://assets/textures/Icons/factions/tenacity_icon.png")
 		Faction.UNITY:
-			return load("res://assets/textures/Icons/factions/hegemony_icon.png")
+			return load("res://assets/textures/Icons/factions/unity_icon.png")
 		_:
 			push_error("Nonexistent faction type")
 			return load("res://icon.svg")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://q2m5bp4u60es"
-path="res://.godot/imported/mini_hegemony.png-4792d38ba9055ae01bc5aa16b16f834c.ctex"
+path="res://.godot/imported/mini_unity.png-c5af60a2c94a3dc2358574883874babc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Icons/factions/mini_hegemony.png"
-dest_files=["res://.godot/imported/mini_hegemony.png-4792d38ba9055ae01bc5aa16b16f834c.ctex"]
+source_file="res://assets/textures/Icons/factions/mini_unity.png"
+dest_files=["res://.godot/imported/mini_unity.png-c5af60a2c94a3dc2358574883874babc.ctex"]
 
 [params]
 

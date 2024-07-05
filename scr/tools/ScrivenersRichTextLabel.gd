@@ -6,7 +6,7 @@ class_name ScrivenersRichText
 # When using this make sure any key words follow this setup ${keyword}
 
 var keyWords = [
-"Ingenuity", "Endurance", "Strength", "Hegemony" , "Ambition" , "Tenacity", "Power",
+"Ingenuity", "Endurance", "Strength", "Unity" , "Ambition" , "Tenacity", "Power",
 "Heart", "Card", "Support", "Equipment", "Location", "Commander", "Unit","Neutral",
 "Burst","Revenge","Twinattack", "Murder", "Slayer", "Protected", "Aerial", "Whirlwind", "Unique", "Logistics", "Gravefeed", "Necroform X","Improvise", "Enrage", "Pincer", "Active", "Ranged", "Guardian", "Sift X","Energize", "Patience", "Rapid", "Fervor" 
 ]
@@ -41,8 +41,8 @@ func load_text_effect(_key:String):
 			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/factions/mini_endurance.png[/img]"
 		"Strength": 
 			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/factions/mini_strength.png[/img]"
-		"Hegemony": 
-			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/factions/mini_hegemony.png[/img]"
+		"Unity": 
+			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/factions/mini_unity.png[/img]"
 		"Ambition": 
 			return "[img={width}"+str(iconSize)+"{height}]res://assets/textures/Icons/factions/mini_ambition.png[/img]"
 		"Tenacity":
