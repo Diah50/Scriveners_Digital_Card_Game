@@ -1,14 +1,23 @@
-[gd_scene load_steps=44 format=3 uid="uid://bstnmbxxb6vjl"]
+[gd_scene load_steps=56 format=3 uid="uid://bstnmbxxb6vjl"]
 
 [ext_resource type="Texture2D" uid="uid://tw174putly5o" path="res://assets/textures/scriveners_blue_gameboard.png" id="1_6kihm"]
 [ext_resource type="Texture2D" uid="uid://celnvls65dms5" path="res://assets/textures/scriveners_red_gameboard.png" id="2_xk524"]
-[ext_resource type="Script" path="res://scr/board/grid board.gd" id="3_o1sgy"]
-[ext_resource type="PackedScene" uid="uid://dad04w52u8fsc" path="res://scr/board/card_controler.tscn" id="4_qnc0f"]
+[ext_resource type="Script" path="res://scr/board/board controler.gd" id="3_o1sgy"]
+[ext_resource type="PackedScene" uid="uid://dad04w52u8fsc" path="res://scr/cards/card_controler.tscn" id="4_qnc0f"]
+[ext_resource type="Texture2D" uid="uid://cixob3vlhclfj" path="res://assets/textures/ScrivenersBack.png" id="4_tuprj"]
 [ext_resource type="PackedScene" uid="uid://bjceh21mr8vpu" path="res://scr/board/grid cell.tscn" id="4_w35ts"]
 [ext_resource type="Script" path="res://scr/board/Display Card.gd" id="5_tcvxb"]
+[ext_resource type="Texture2D" uid="uid://tgn5fldsfhe6" path="res://assets/textures/Icons/factions/ambition_icon.png" id="6_3vk5v"]
 [ext_resource type="PackedScene" uid="uid://cw7ye7msiyejp" path="res://scr/cards/card Template.tscn" id="6_7383x"]
+[ext_resource type="Texture2D" uid="uid://wxqn43e66axo" path="res://assets/textures/Icons/card types/commander_icon.png" id="6_yhflu"]
+[ext_resource type="Texture2D" uid="uid://bofqicrh26spy" path="res://assets/textures/Icons/factions/tenacity_icon.png" id="7_1w5pb"]
 [ext_resource type="Script" path="res://global scripts/cardResource.gd" id="7_lohsb"]
+[ext_resource type="Texture2D" uid="uid://kwp77v3w2sl2" path="res://assets/textures/Icons/card types/neutral_icon.png" id="7_pb5m1"]
+[ext_resource type="Texture2D" uid="uid://ck3dm0aa1uv2w" path="res://assets/textures/Icons/factions/endurance_icon.png" id="8_n2a0h"]
+[ext_resource type="Texture2D" uid="uid://cc26b7xmmhquc" path="res://assets/textures/Icons/factions/hegemony_icon.png" id="9_fe680"]
 [ext_resource type="Shader" path="res://scr/board/outline.gdshader" id="9_sigrc"]
+[ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/factions/ingenuity_icon.png" id="10_flv10"]
+[ext_resource type="Texture2D" uid="uid://cnwe6voambq66" path="res://assets/textures/Icons/factions/strength_icon.png" id="11_4kgqk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e17gw"]
 resource_local_to_scene = true
@@ -260,6 +269,17 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/is_active = false
 
+[sub_resource type="LabelSettings" id="LabelSettings_68f1i"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_mp8op"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iw6d1"]
+font_size = 25
+font_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
 [sub_resource type="Resource" id="Resource_2u2dp"]
 script = ExtResource("7_lohsb")
 cardName = ""
@@ -387,7 +407,7 @@ rotation = 3.14159
 scale = Vector2(0.666, 0.664)
 texture = ExtResource("2_xk524")
 
-[node name="grid board" type="Control" parent="."]
+[node name="board controler" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -403,7 +423,7 @@ grow_vertical = 2
 scale = Vector2(0.75, 0.75)
 script = ExtResource("3_o1sgy")
 
-[node name="GridContainer" type="GridContainer" parent="grid board"]
+[node name="GridContainer" type="GridContainer" parent="board controler"]
 layout_mode = 0
 offset_right = 716.0
 offset_bottom = 716.0
@@ -412,108 +432,281 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 9
 columns = 5
 
-[node name="grid cell" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_e17gw")
 layout_mode = 2
 
-[node name="grid cell2" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell2" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_dy6hn")
 layout_mode = 2
 
-[node name="grid cell3" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell3" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_thwjc")
 layout_mode = 2
 
-[node name="grid cell4" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell4" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_fwjc2")
 layout_mode = 2
 
-[node name="grid cell5" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell5" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_j8qhh")
 layout_mode = 2
 
-[node name="grid cell6" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell6" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_5u25m")
 layout_mode = 2
 
-[node name="grid cell7" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell7" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_dtqjb")
 layout_mode = 2
 
-[node name="grid cell8" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell8" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_phait")
 layout_mode = 2
 
-[node name="grid cell9" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell9" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_u6fb8")
 layout_mode = 2
 
-[node name="grid cell10" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell10" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_5r3mu")
 layout_mode = 2
 
-[node name="grid cell11" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell11" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_x2x3x")
 layout_mode = 2
 
-[node name="grid cell12" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell12" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_bj7ym")
 layout_mode = 2
 
-[node name="grid cell13" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell13" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_tek35")
 layout_mode = 2
 
-[node name="grid cell14" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell14" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_i7skd")
 layout_mode = 2
 
-[node name="grid cell15" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell15" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_epk0s")
 layout_mode = 2
 
-[node name="grid cell16" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell16" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_ccth3")
 layout_mode = 2
 
-[node name="grid cell17" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell17" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_usdlj")
 layout_mode = 2
 
-[node name="grid cell18" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell18" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_lm77d")
 layout_mode = 2
 
-[node name="grid cell19" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell19" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_t7uvs")
 layout_mode = 2
 
-[node name="grid cell20" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell20" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_lxhpv")
 layout_mode = 2
 
-[node name="grid cell21" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell21" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_wgq1f")
 layout_mode = 2
 
-[node name="grid cell22" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell22" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_ataxq")
 layout_mode = 2
 
-[node name="grid cell23" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell23" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_u2v8f")
 layout_mode = 2
 
-[node name="grid cell24" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell24" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_tkuws")
 layout_mode = 2
 
-[node name="grid cell25" parent="grid board/GridContainer" instance=ExtResource("4_w35ts")]
+[node name="grid cell25" parent="board controler/GridContainer" instance=ExtResource("4_w35ts")]
 material = SubResource("ShaderMaterial_gq6xi")
 layout_mode = 2
 
-[node name="Card Controler" parent="." instance=ExtResource("4_qnc0f")]
+[node name="Resource manager" type="GridContainer" parent="board controler"]
+layout_mode = 0
+offset_left = -324.0
+offset_top = 592.0
+offset_right = -16.0
+offset_bottom = 796.0
+columns = 3
+
+[node name="Ambition resource" type="MarginContainer" parent="board controler/Resource manager"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Ambition resource" type="TextureRect" parent="board controler/Resource manager/Ambition resource"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("6_3vk5v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="board controler/Resource manager/Ambition resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tenacity resource" type="MarginContainer" parent="board controler/Resource manager"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Tenacity resource" type="TextureRect" parent="board controler/Resource manager/Tenacity resource"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("7_1w5pb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="board controler/Resource manager/Tenacity resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Endurance resource" type="MarginContainer" parent="board controler/Resource manager"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Endurance resource" type="TextureRect" parent="board controler/Resource manager/Endurance resource"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("8_n2a0h")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="board controler/Resource manager/Endurance resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hegemony resource" type="MarginContainer" parent="board controler/Resource manager"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Hegemony resource" type="TextureRect" parent="board controler/Resource manager/Hegemony resource"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("9_fe680")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="board controler/Resource manager/Hegemony resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ingenuity resource" type="MarginContainer" parent="board controler/Resource manager"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Ingenuity resource" type="TextureRect" parent="board controler/Resource manager/Ingenuity resource"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("10_flv10")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="board controler/Resource manager/Ingenuity resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Strength resource" type="MarginContainer" parent="board controler/Resource manager"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Strength resource" type="TextureRect" parent="board controler/Resource manager/Strength resource"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("11_4kgqk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="board controler/Resource manager/Strength resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card Controler" parent="." node_paths=PackedStringArray("deck_btn", "graveyard_btn", "banished_btn") instance=ExtResource("4_qnc0f")]
 position = Vector2(599, 703)
+scale = Vector2(0.999997, 0.999997)
+deck_btn = NodePath("Deck btn")
+graveyard_btn = NodePath("Banished btn")
+banished_btn = NodePath("Banished btn")
+
+[node name="Deck btn" type="TextureButton" parent="Card Controler"]
+offset_left = 334.0
+offset_top = -219.0
+offset_right = 494.0
+offset_bottom = 1.0
+texture_normal = ExtResource("4_tuprj")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Graveyard btn" type="TextureButton" parent="Card Controler"]
+offset_left = 344.001
+offset_top = -311.001
+offset_right = 499.001
+offset_bottom = -234.001
+disabled = true
+texture_normal = ExtResource("6_yhflu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="Card Controler/Graveyard btn"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 22.0
+offset_right = 148.0
+offset_bottom = 58.0
+text = "GraveYard"
+label_settings = SubResource("LabelSettings_mp8op")
+
+[node name="Banished btn" type="TextureButton" parent="Card Controler"]
+offset_left = 524.0
+offset_top = -309.0
+offset_right = 665.0
+offset_bottom = -234.0
+disabled = true
+texture_normal = ExtResource("7_pb5m1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Card Controler/Banished btn"]
+layout_mode = 0
+offset_left = 11.0015
+offset_top = 15.999
+offset_right = 150.001
+offset_bottom = 59.999
+text = "Banished"
+label_settings = SubResource("LabelSettings_iw6d1")
 
 [node name="Display Card" type="Node2D" parent="."]
 visible = false

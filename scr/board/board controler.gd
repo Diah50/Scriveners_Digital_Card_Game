@@ -1,5 +1,6 @@
 extends Control
 @onready var grid = $GridContainer
+
 var grid_size = Vector2i(5,5)
 var board_grid = [] 
 
@@ -18,13 +19,14 @@ func _ready():
 
 func get_cell_by_pos(pos:Vector2i):
 	if pos.x >= grid_size.x or pos.y >= grid_size.y or pos.x < 0 or pos.y < 0:
-		push_error("Cordinates: "+str(pos)+" is out of bounds of grid")
+		print("Cordinates: "+str(pos)+" is out of bounds of grid")
 		return null
 	return board_grid[pos.y][pos.x]
 
 func _connect_signals():
 	for cell in grid.get_children():
-		
+		cell.area.area_entered.connect(_on_cell_area_entered.bind(cell))
+		cell.area.area_exited.connect(_on_cell_area_exited.bind(cell))
 		cell.button.mouse_entered.connect(_on_mouse_entered_cell.bind(cell))
 		cell.button.mouse_exited.connect(_on_mouse_exited_cell.bind(cell))
 		cell.button.button_down.connect(_on_button_down.bind(cell))
@@ -96,6 +98,14 @@ func remove_highlighted_cells():
 	for cell in grid.get_children():
 		cell.modulate = Color.WHITE
 
+func _on_cell_area_entered(area,cell):
+	if area.get_parent().get_parent() is Targeting_Arrow and area.get_parent().get_parent() != cell.arrow:
+		cell.material.set("shader_parameter/is_active",true)
+
+func _on_cell_area_exited(area,cell):
+	if area.get_parent().get_parent() is Targeting_Arrow and area.get_parent().get_parent() != cell.arrow:
+		cell.material.set("shader_parameter/is_active",false)
+
 func determine_moveable_spaces(pos:Vector2i,move_speed:int = 1):
 	var directions = [Vector2i.UP,Vector2i.DOWN,Vector2i.LEFT,Vector2i.RIGHT]
 	var moveable_spaces = []
@@ -105,3 +115,4 @@ func determine_moveable_spaces(pos:Vector2i,move_speed:int = 1):
 			moveable_spaces.append((dir*dis)+pos)
 		
 	return moveable_spaces
+

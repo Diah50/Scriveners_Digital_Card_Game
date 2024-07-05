@@ -12,24 +12,16 @@ class_name CardTemplate
 @onready var cardArt = $"Control/background/Panel/Image window/cardImage"
 @onready var artistName = $Control/background/Panel/ArtistTage/artistName
 
+@onready var card_btn = $Control/background/TextureButton
 @onready var area2d = $Area2D
-@onready var scrivener_token = preload("res://scr/board/scrivener_token.tscn")
+
 @export var cardInfo:CardData
-
-#@onready var max_health = cardInfo.heart
-#@onready var health = max_health:
-	#set(value):
-		#if health-value<=0 and value<0 :
-			#health = 0
-		#elif health+value>= max_health and value>0:
-			#health = max_health
-		#health = value 
-
+ 
 var originalPos:Vector2
 var originalRot:float
 
 var is_held = false
-
+var is_disabled = false
 
 func _ready():
 	if !cardInfo:
@@ -39,7 +31,7 @@ func _ready():
 	
 	
 func _process(_delta):
-	if is_held:
+	if is_held and !is_disabled:
 		global_position = get_global_mouse_position()
 		rotation = 0
 
@@ -57,38 +49,8 @@ func update_card_visuals():
 	flovorText.complile_text()
 	cardArt.texture = await cardInfo.load_card_art()
 	artistName.text = cardInfo.artistName
-	
-func check_placeable():
-	var areas = area2d.get_overlapping_areas()
-	for area in areas:
-		if area.get_parent().is_in_group("cell"):
-			var token = scrivener_token.instantiate()
-			token.token_data = cardInfo
-			area.get_parent().get_node("Token container").add_child(token)
 
-			break
-
-func _on_texture_button_mouse_entered():
-	print("in")
-	modulate.a = 0.8
-	print(cardInfo)
-	Events.update_card_display.emit(cardInfo)
-
-	pass # Replace with function body.
-
-func _on_texture_button_mouse_exited():
-	print("out")
-	modulate.a = 1
-	Events.hide_card_display.emit()
-	
-	pass # Replace with function body.
-
-func _on_texture_button_button_up():
-	is_held = false
-	position = originalPos
-	rotation = originalRot
-	check_placeable()
-	pass # Replace with function body.
-
-func _on_texture_button_button_down():
-	is_held = true
+func disable_card(state:bool,can_see:bool=true):
+	is_disabled = state
+	visible = can_see
+	pass

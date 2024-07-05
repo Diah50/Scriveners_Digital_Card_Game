@@ -64,5 +64,3 @@ position = Vector2(70, 70)
 [connection signal="mouse_exited" from="TextureButton" to="." method="_on_mouse_exited_cell"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
