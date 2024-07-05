@@ -1,7 +1,7 @@
 extends Resource
 
 class_name CardData
-enum Faction{AMBITION,INGENUITY,STRENGTH,ENDURANCE,TENACITY,CONTROL,HEGEMONY,NONE}
+enum Faction{AMBITION,INGENUITY,STRENGTH,ENDURANCE,TENACITY,UNITY,NONE}
 
 enum CardType {CARD,COMMANDER,LOCATION,SUPPORT,NEUTRAL,EQUIPMENT}
 @export var cardName:String
@@ -48,9 +48,7 @@ func load_faction_texture(faction_type:Faction):
 			return load("res://assets/textures/Icons/factions/endurance_icon.png")
 		Faction.TENACITY:
 			return load("res://assets/textures/Icons/factions/tenacity_icon.png")
-		Faction.CONTROL:
-			return load("res://assets/textures/Icons/factions/control_icon.png")
-		Faction.HEGEMONY:
+		Faction.UNITY:
 			return load("res://assets/textures/Icons/factions/hegemony_icon.png")
 		_:
 			push_error("Nonexistent faction type")
@@ -67,7 +65,7 @@ func get_faction_color(faction_type):
 			return Color.YELLOW
 		Faction.INGENUITY:
 			return Color.BLUE
-		Faction.HEGEMONY:
+		Faction.UNITY:
 			return Color.ORANGE
 		Faction.TENACITY:
 			return Color.RED
