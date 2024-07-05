@@ -4,6 +4,7 @@ var token_data:CardData
 @onready var power_text = $power/Label
 @onready var heath_text = $heart/Label
 @onready var token_art = $PanelContainer/TextureButton
+@onready var pannel = $PanelContainer/Panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +12,7 @@ func _ready():
 		power_text.text = str(token_data.power)
 		heath_text.text = str(token_data.heart)
 		token_art.texture_normal = await token_data.load_card_art()
+		pannel.modulate = token_data.get_faction_color(token_data.faction)
 
 
 func _process(_delta):

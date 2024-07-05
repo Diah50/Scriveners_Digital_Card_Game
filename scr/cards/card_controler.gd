@@ -234,6 +234,8 @@ func convert_card_to_token(card:CardTemplate):
 		if area.get_parent().is_in_group("cell"):
 			var token = scrivener_token.instantiate()
 			token.token_data = card.cardInfo
+			area.get_parent().cell_faction = token.token_data.faction
+			
 			area.get_parent().get_node("Token container").add_child(token)
 			transfer_card_to(CARD_HOLDER.ON_BOARD,card)
 			break

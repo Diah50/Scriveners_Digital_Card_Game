@@ -1,6 +1,7 @@
-[gd_scene load_steps=56 format=3 uid="uid://bstnmbxxb6vjl"]
+[gd_scene load_steps=54 format=3 uid="uid://bstnmbxxb6vjl"]
 
 [ext_resource type="Texture2D" uid="uid://tw174putly5o" path="res://assets/textures/scriveners_blue_gameboard.png" id="1_6kihm"]
+[ext_resource type="Script" path="res://scr/board/gameboard.gd" id="1_782r8"]
 [ext_resource type="Texture2D" uid="uid://celnvls65dms5" path="res://assets/textures/scriveners_red_gameboard.png" id="2_xk524"]
 [ext_resource type="Script" path="res://scr/board/board controler.gd" id="3_o1sgy"]
 [ext_resource type="PackedScene" uid="uid://dad04w52u8fsc" path="res://scr/cards/card_controler.tscn" id="4_qnc0f"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bjceh21mr8vpu" path="res://scr/board/grid cell.tscn" id="4_w35ts"]
 [ext_resource type="Script" path="res://scr/board/Display Card.gd" id="5_tcvxb"]
 [ext_resource type="Texture2D" uid="uid://tgn5fldsfhe6" path="res://assets/textures/Icons/factions/ambition_icon.png" id="6_3vk5v"]
+[ext_resource type="Script" path="res://scr/board/Resource manager.gd" id="6_4aq66"]
 [ext_resource type="PackedScene" uid="uid://cw7ye7msiyejp" path="res://scr/cards/card Template.tscn" id="6_7383x"]
 [ext_resource type="Texture2D" uid="uid://wxqn43e66axo" path="res://assets/textures/Icons/card types/commander_icon.png" id="6_yhflu"]
 [ext_resource type="Texture2D" uid="uid://bofqicrh26spy" path="res://assets/textures/Icons/factions/tenacity_icon.png" id="7_1w5pb"]
@@ -18,6 +20,54 @@
 [ext_resource type="Shader" path="res://scr/board/outline.gdshader" id="9_sigrc"]
 [ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/factions/ingenuity_icon.png" id="10_flv10"]
 [ext_resource type="Texture2D" uid="uid://cnwe6voambq66" path="res://assets/textures/Icons/factions/strength_icon.png" id="11_4kgqk"]
+[ext_resource type="Script" path="res://scr/board/Phase manager.gd" id="20_mpuxe"]
+
+[sub_resource type="Animation" id="Animation_g8lys"]
+resource_name = "phase shift"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Phase manager/phase banner/Polygon2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1352, 224), Vector2(144, 224), Vector2(55, 224), Vector2(-1290, 224)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Phase manager/phase banner/Polygon2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1288, 344), Vector2(-8, 344), Vector2(87, 344), Vector2(1348, 344)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Phase manager/phase banner:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rj77w"]
+_data = {
+"phase shift": SubResource("Animation_g8lys")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fuhh"]
+font_size = 60
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e17gw"]
 resource_local_to_scene = true
@@ -295,106 +345,58 @@ artistName = ""
 cardArt = ""
 moveSpeed = 1
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5bjp"]
-shader = ExtResource("9_sigrc")
-shader_parameter/color = Color(0.137255, 0.137255, 0.137255, 1)
-shader_parameter/width = 0.1
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-shader_parameter/is_active = false
+[node name="Game manger" type="Node2D"]
+script = ExtResource("1_782r8")
 
-[sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_3e8fn"]
+[node name="Phase manager" type="Node" parent="."]
+script = ExtResource("20_mpuxe")
 
-[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_g4wxc"]
-function = 2
+[node name="phase banner" type="Node2D" parent="Phase manager"]
 
-[sub_resource type="VisualShaderNodeVec3Constant" id="VisualShaderNodeVec3Constant_3m1sd"]
-constant = Vector3(1, 0.5, 0.25)
-
-[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_4p4q3"]
-default_input_values = [0, 1.48, 1, 1.0, 2, 1.0]
-
-[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_p8vw5"]
-output_port_for_preview = 0
-function = 2
-
-[sub_resource type="VisualShader" id="VisualShader_n72p5"]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
-
-
-
-
-void vertex() {
-// VectorCompose:2
-	float n_in2p0 = 1.48000;
-	float n_in2p1 = 1.00000;
-	float n_in2p2 = 1.00000;
-	vec3 n_out2p0 = vec3(n_in2p0, n_in2p1, n_in2p2);
-
-
-	vec3 n_out3p0;
-// ColorFunc:3
-	{
-		vec3 c = n_out2p0;
-		vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
-		vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
-		vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
-		float d = q.x - min(q.w, q.y);
-		float e = 1.0e-10;
-		n_out3p0 = vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
-	}
-
-
-// Output:0
-	COLOR.rgb = n_out3p0;
-
-
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Phase manager/phase banner"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_rj77w")
 }
 
-void fragment() {
-// Vector3Constant:4
-	vec3 n_out4p0 = vec3(1.000000, 0.500000, 0.250000);
+[node name="Polygon2D" type="Polygon2D" parent="Phase manager/phase banner"]
+position = Vector2(1352, 224)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1280, 0, 1216, 128, 1216, 128, -64, 128)
+metadata/_edit_group_ = true
 
+[node name="Polygon2D2" type="Polygon2D" parent="Phase manager/phase banner/Polygon2D"]
+color = Color(0.239216, 0.466667, 0.835294, 1)
+polygon = PackedVector2Array(8, 8, 1264, 8, 1208, 120, -48, 120)
 
-	vec3 n_out3p0;
-// ColorFunc:3
-	{
-		vec3 c = n_out4p0;
-		vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
-		vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
-		vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
-		float d = q.x - min(q.w, q.y);
-		float e = 1.0e-10;
-		n_out3p0 = vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
-	}
+[node name="Label" type="Label" parent="Phase manager/phase banner/Polygon2D/Polygon2D2"]
+offset_left = 318.0
+offset_top = 44.0
+offset_right = 492.0
+offset_bottom = 127.0
+text = "Start"
+label_settings = SubResource("LabelSettings_4fuhh")
+horizontal_alignment = 1
+vertical_alignment = 1
 
+[node name="Polygon2D2" type="Polygon2D" parent="Phase manager/phase banner"]
+position = Vector2(-1288, 344)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1280, 0, 1216, 128, 1216, 128, -64, 128)
+metadata/_edit_group_ = true
 
-// Output:0
-	ALBEDO = n_out3p0;
+[node name="Polygon2D2" type="Polygon2D" parent="Phase manager/phase banner/Polygon2D2"]
+color = Color(0.239216, 0.466667, 0.835294, 1)
+polygon = PackedVector2Array(8, 8, 1264, 8, 1208, 120, -48, 120)
 
-
-}
-"
-nodes/vertex/2/node = SubResource("VisualShaderNodeVectorCompose_4p4q3")
-nodes/vertex/2/position = Vector2(-260, 160)
-nodes/vertex/3/node = SubResource("VisualShaderNodeColorFunc_p8vw5")
-nodes/vertex/3/position = Vector2(0, 180)
-nodes/vertex/connections = PackedInt32Array(2, 0, 3, 0, 3, 0, 0, 6)
-nodes/fragment/2/node = SubResource("VisualShaderNodeColorOp_3e8fn")
-nodes/fragment/2/position = Vector2(60, 380)
-nodes/fragment/3/node = SubResource("VisualShaderNodeColorFunc_g4wxc")
-nodes/fragment/3/position = Vector2(60, 540)
-nodes/fragment/4/node = SubResource("VisualShaderNodeVec3Constant_3m1sd")
-nodes/fragment/4/position = Vector2(-380, 520)
-nodes/fragment/connections = PackedInt32Array(4, 0, 3, 0, 3, 0, 0, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbrkj"]
-render_priority = 0
-shader = SubResource("VisualShader_n72p5")
-
-[node name="Gameboard" type="Node2D"]
+[node name="Label2" type="Label" parent="Phase manager/phase banner/Polygon2D2/Polygon2D2"]
+offset_left = 647.0
+offset_right = 821.0
+offset_bottom = 83.0
+text = "Phase"
+label_settings = SubResource("LabelSettings_4fuhh")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScrivenersBlueGameboard" type="Sprite2D" parent="."]
 position = Vector2(637.5, 538.768)
@@ -406,6 +408,22 @@ position = Vector2(637.776, 171.268)
 rotation = 3.14159
 scale = Vector2(0.666, 0.664)
 texture = ExtResource("2_xk524")
+
+[node name="next phase btn" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 443.0
+offset_right = 177.0
+offset_bottom = 493.0
+theme_override_font_sizes/font_size = 30
+text = "Next Phase"
+
+[node name="end turn btn" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 385.0
+offset_right = 144.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 30
+text = "End Turn"
 
 [node name="board controler" type="Control" parent="."]
 layout_mode = 3
@@ -425,8 +443,8 @@ script = ExtResource("3_o1sgy")
 
 [node name="GridContainer" type="GridContainer" parent="board controler"]
 layout_mode = 0
-offset_right = 716.0
-offset_bottom = 716.0
+offset_right = 740.0
+offset_bottom = 736.0
 mouse_force_pass_scroll_events = false
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 9
@@ -532,13 +550,14 @@ layout_mode = 2
 material = SubResource("ShaderMaterial_gq6xi")
 layout_mode = 2
 
-[node name="Resource manager" type="GridContainer" parent="board controler"]
+[node name="Resource manager" type="GridContainer" parent="board controler" groups=["player"]]
 layout_mode = 0
 offset_left = -324.0
 offset_top = 592.0
 offset_right = -16.0
 offset_bottom = 796.0
 columns = 3
+script = ExtResource("6_4aq66")
 
 [node name="Ambition resource" type="MarginContainer" parent="board controler/Resource manager"]
 custom_minimum_size = Vector2(100, 100)
@@ -717,16 +736,5 @@ script = ExtResource("5_tcvxb")
 scale = Vector2(3, 3)
 cardInfo = SubResource("Resource_2u2dp")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_e5bjp")
-offset_left = -480.0
-offset_top = 242.0
-offset_right = -264.0
-offset_bottom = 463.0
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_pbrkj")
-offset_left = -218.0
-offset_top = 266.0
-offset_right = -56.0
-offset_bottom = 422.0
+[connection signal="pressed" from="next phase btn" to="." method="_on_next_phase_btn_pressed"]
+[connection signal="pressed" from="end turn btn" to="." method="_on_end_turn_btn_pressed"]
