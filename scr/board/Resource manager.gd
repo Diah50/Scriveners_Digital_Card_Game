@@ -21,22 +21,7 @@ func _ready():
 	Events.resource_count_updated.connect(update_resource_count)
 
 func update_resource_count(count:int,faction:CardData.Faction):
-	if is_in_group("player") and Events.turn == Events.TURN.PLAYER :
-		match faction:
-			CardData.Faction.AMBITION:
-				ambition_count += count
-			CardData.Faction.ENDURANCE:
-				tenacity_count += count
-			CardData.Faction.INGENUITY:
-				endurance_count += count
-			CardData.Faction.UNITY:
-				unity_count += count
-			CardData.Faction.TENACITY:
-				ingenuity_count += count
-			CardData.Faction.STRENGTH:
-				strength_count += count
-		update_resources_text()
-	elif  is_in_group("opponent") and Events.turn == Events.TURN.OPPONENT :
+	if (is_in_group("player") and Events.turn == Events.TURN.PLAYER) or (is_in_group("opponent") and Events.turn == Events.TURN.OPPONENT):
 		match faction:
 			CardData.Faction.AMBITION:
 				ambition_count += count
@@ -52,7 +37,7 @@ func update_resource_count(count:int,faction:CardData.Faction):
 				strength_count += count
 		update_resources_text()
 
-		
+
 func update_resources_text():
 		ambition_text.text = str(ambition_count)
 		tenacity_text.text = str(tenacity_count)

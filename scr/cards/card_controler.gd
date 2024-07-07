@@ -31,10 +31,11 @@ var on_board_pile:Array[CardTemplate] = []
 enum CARD_HOLDER {HAND,DECK,GRAVEYARD,BANISHED,ON_BOARD}
 
 var hand_size_limit = 12
-var draw_set_size = 5
+var draw_set_size = 2
 
 func _ready():
 	_connect_signals()
+	Events.draw_phase.connect(_on_draw_phase)
 	create_hand()
 	reorganise_hand()
 
@@ -217,9 +218,6 @@ func draw_card():
 	if hand_pile.size() > hand_size_limit:
 		print("Hand is full can't draw anymore cards")
 		return
-	if deck_pile.size() == 0:
-		print("nothing to draw")
-		return
 	transfer_card_to(CARD_HOLDER.HAND,deck_pile[0])
 	
 func randomise_deck_order():
@@ -235,7 +233,9 @@ func convert_card_to_token(card:CardTemplate):
 			var token = scrivener_token.instantiate()
 			token.token_data = card.cardInfo
 			area.get_parent().cell_faction = token.token_data.faction
+			area.get_parent().token = token
 			
+			token.add_to_group("player" if is_in_group("player") else "opponent")
 			area.get_parent().get_node("Token container").add_child(token)
 			transfer_card_to(CARD_HOLDER.ON_BOARD,card)
 			break
@@ -289,4 +289,9 @@ func _on_card_mouse_exited(card:CardTemplate):
 	print("out")
 	card.modulate.a = 1
 	Events.hide_card_display.emit()
+	pass
+
+func _on_draw_phase():
+	for i in draw_set_size:
+		draw_card()
 	pass

@@ -68,17 +68,20 @@ func _on_mouse_exited_cell(cell):
 	pass
 
 func _on_button_down(cell):
+	
 	print("Cell clicked down")
-	if cell.token_container.get_child_count() > 0:
+	if cell.token_container.get_child_count() > 0 and cell.can_interact():
 		var token_moove_speed = cell.token_container.get_child(0).token_data.moveSpeed
 		highlight_cells(determine_moveable_spaces(cell.cell_pos,token_moove_speed).map(func (pos): return get_cell_by_pos(pos) ))
 		cell.arrow.is_arrow_disabled = false
 
 func _on_button_up(cell):
 	print("Cell clicked up")
-	if cell.token_container.get_child_count() > 0:
+	if cell.token_container.get_child_count() > 0 and cell.can_interact():
 		if  cell.arrow.get_colliing_cell() and determine_moveable_spaces(cell.cell_pos).has(cell.arrow.get_colliing_cell().cell_pos):
 			cell.token_container.get_child(0).reparent(cell.arrow.get_colliing_cell().token_container)
+			cell.arrow.get_colliing_cell().token = cell.token
+			cell.token = null
 			cell.arrow.is_arrow_disabled = true
 			remove_highlighted_cells()
 		else:

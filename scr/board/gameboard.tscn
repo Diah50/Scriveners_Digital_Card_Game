@@ -409,22 +409,6 @@ rotation = 3.14159
 scale = Vector2(0.666, 0.664)
 texture = ExtResource("2_xk524")
 
-[node name="next phase btn" type="Button" parent="."]
-offset_left = 5.0
-offset_top = 443.0
-offset_right = 177.0
-offset_bottom = 493.0
-theme_override_font_sizes/font_size = 30
-text = "Next Phase"
-
-[node name="end turn btn" type="Button" parent="."]
-offset_left = 5.0
-offset_top = 385.0
-offset_right = 144.0
-offset_bottom = 435.0
-theme_override_font_sizes/font_size = 30
-text = "End Turn"
-
 [node name="board controler" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -550,27 +534,43 @@ layout_mode = 2
 material = SubResource("ShaderMaterial_gq6xi")
 layout_mode = 2
 
-[node name="Resource manager" type="GridContainer" parent="board controler" groups=["player"]]
-layout_mode = 0
-offset_left = -324.0
-offset_top = 592.0
-offset_right = -16.0
-offset_bottom = 796.0
+[node name="Player" type="Node2D" parent="."]
+
+[node name="next phase btn" type="Button" parent="Player"]
+offset_left = 5.0
+offset_top = 504.0
+offset_right = 177.0
+offset_bottom = 554.0
+theme_override_font_sizes/font_size = 30
+text = "Next Phase"
+
+[node name="end turn btn" type="Button" parent="Player"]
+offset_left = 5.0
+offset_top = 446.0
+offset_right = 144.0
+offset_bottom = 496.0
+theme_override_font_sizes/font_size = 30
+text = "End Turn"
+
+[node name="Resource manager" type="GridContainer" parent="Player" groups=["player"]]
+offset_left = 115.0
+offset_top = 558.0
+offset_right = 423.0
+offset_bottom = 762.0
 columns = 3
 script = ExtResource("6_4aq66")
 
-[node name="Ambition resource" type="MarginContainer" parent="board controler/Resource manager"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Ambition resource" type="MarginContainer" parent="Player/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 
-[node name="Ambition resource" type="TextureRect" parent="board controler/Resource manager/Ambition resource"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Ambition resource" type="TextureRect" parent="Player/Resource manager/Ambition resource"]
 layout_mode = 2
 texture = ExtResource("6_3vk5v")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="board controler/Resource manager/Ambition resource"]
+[node name="Label" type="Label" parent="Player/Resource manager/Ambition resource"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0"
@@ -578,18 +578,17 @@ label_settings = SubResource("LabelSettings_68f1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tenacity resource" type="MarginContainer" parent="board controler/Resource manager"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Tenacity resource" type="MarginContainer" parent="Player/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 
-[node name="Tenacity resource" type="TextureRect" parent="board controler/Resource manager/Tenacity resource"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Tenacity resource" type="TextureRect" parent="Player/Resource manager/Tenacity resource"]
 layout_mode = 2
 texture = ExtResource("7_1w5pb")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="board controler/Resource manager/Tenacity resource"]
+[node name="Label" type="Label" parent="Player/Resource manager/Tenacity resource"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0"
@@ -597,18 +596,17 @@ label_settings = SubResource("LabelSettings_68f1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Endurance resource" type="MarginContainer" parent="board controler/Resource manager"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Endurance resource" type="MarginContainer" parent="Player/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 
-[node name="Endurance resource" type="TextureRect" parent="board controler/Resource manager/Endurance resource"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Endurance resource" type="TextureRect" parent="Player/Resource manager/Endurance resource"]
 layout_mode = 2
 texture = ExtResource("8_n2a0h")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="board controler/Resource manager/Endurance resource"]
+[node name="Label" type="Label" parent="Player/Resource manager/Endurance resource"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0"
@@ -616,18 +614,17 @@ label_settings = SubResource("LabelSettings_68f1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Unity resource" type="MarginContainer" parent="board controler/Resource manager"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Unity resource" type="MarginContainer" parent="Player/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 
-[node name="Unity resource" type="TextureRect" parent="board controler/Resource manager/Unity resource"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Unity resource" type="TextureRect" parent="Player/Resource manager/Unity resource"]
 layout_mode = 2
 texture = ExtResource("9_fe680")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="board controler/Resource manager/Unity resource"]
+[node name="Label" type="Label" parent="Player/Resource manager/Unity resource"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0"
@@ -635,18 +632,17 @@ label_settings = SubResource("LabelSettings_68f1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Ingenuity resource" type="MarginContainer" parent="board controler/Resource manager"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Ingenuity resource" type="MarginContainer" parent="Player/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 
-[node name="Ingenuity resource" type="TextureRect" parent="board controler/Resource manager/Ingenuity resource"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Ingenuity resource" type="TextureRect" parent="Player/Resource manager/Ingenuity resource"]
 layout_mode = 2
 texture = ExtResource("10_flv10")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="board controler/Resource manager/Ingenuity resource"]
+[node name="Label" type="Label" parent="Player/Resource manager/Ingenuity resource"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0"
@@ -654,18 +650,17 @@ label_settings = SubResource("LabelSettings_68f1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Strength resource" type="MarginContainer" parent="board controler/Resource manager"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Strength resource" type="MarginContainer" parent="Player/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 
-[node name="Strength resource" type="TextureRect" parent="board controler/Resource manager/Strength resource"]
-custom_minimum_size = Vector2(100, 100)
+[node name="Strength resource" type="TextureRect" parent="Player/Resource manager/Strength resource"]
 layout_mode = 2
 texture = ExtResource("11_4kgqk")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="board controler/Resource manager/Strength resource"]
+[node name="Label" type="Label" parent="Player/Resource manager/Strength resource"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "0"
@@ -673,14 +668,14 @@ label_settings = SubResource("LabelSettings_68f1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Card Controler" parent="." node_paths=PackedStringArray("deck_btn", "graveyard_btn", "banished_btn") instance=ExtResource("4_qnc0f")]
+[node name="Card Controler" parent="Player" node_paths=PackedStringArray("deck_btn", "graveyard_btn", "banished_btn") groups=["player"] instance=ExtResource("4_qnc0f")]
 position = Vector2(599, 703)
 scale = Vector2(0.999997, 0.999997)
 deck_btn = NodePath("Deck btn")
 graveyard_btn = NodePath("Banished btn")
 banished_btn = NodePath("Banished btn")
 
-[node name="Deck btn" type="TextureButton" parent="Card Controler"]
+[node name="Deck btn" type="TextureButton" parent="Player/Card Controler"]
 offset_left = 334.0
 offset_top = -219.0
 offset_right = 494.0
@@ -689,7 +684,7 @@ texture_normal = ExtResource("4_tuprj")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Graveyard btn" type="TextureButton" parent="Card Controler"]
+[node name="Graveyard btn" type="TextureButton" parent="Player/Card Controler"]
 offset_left = 344.001
 offset_top = -311.001
 offset_right = 499.001
@@ -699,7 +694,7 @@ texture_normal = ExtResource("6_yhflu")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label2" type="Label" parent="Card Controler/Graveyard btn"]
+[node name="Label2" type="Label" parent="Player/Card Controler/Graveyard btn"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 22.0
@@ -708,7 +703,7 @@ offset_bottom = 58.0
 text = "GraveYard"
 label_settings = SubResource("LabelSettings_mp8op")
 
-[node name="Banished btn" type="TextureButton" parent="Card Controler"]
+[node name="Banished btn" type="TextureButton" parent="Player/Card Controler"]
 offset_left = 524.0
 offset_top = -309.0
 offset_right = 665.0
@@ -718,7 +713,182 @@ texture_normal = ExtResource("7_pb5m1")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Card Controler/Banished btn"]
+[node name="Label" type="Label" parent="Player/Card Controler/Banished btn"]
+layout_mode = 0
+offset_left = 11.0015
+offset_top = 15.999
+offset_right = 150.001
+offset_bottom = 59.999
+text = "Banished"
+label_settings = SubResource("LabelSettings_iw6d1")
+
+[node name="Opponent" type="Node2D" parent="."]
+
+[node name="Resource manager" type="GridContainer" parent="Opponent" groups=["opponent"]]
+offset_left = 932.0
+offset_top = 28.0
+offset_right = 1165.0
+offset_bottom = 182.0
+columns = 3
+script = ExtResource("6_4aq66")
+
+[node name="Ambition resource" type="MarginContainer" parent="Opponent/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Ambition resource" type="TextureRect" parent="Opponent/Resource manager/Ambition resource"]
+layout_mode = 2
+texture = ExtResource("6_3vk5v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Opponent/Resource manager/Ambition resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tenacity resource" type="MarginContainer" parent="Opponent/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Tenacity resource" type="TextureRect" parent="Opponent/Resource manager/Tenacity resource"]
+layout_mode = 2
+texture = ExtResource("7_1w5pb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Opponent/Resource manager/Tenacity resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Endurance resource" type="MarginContainer" parent="Opponent/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Endurance resource" type="TextureRect" parent="Opponent/Resource manager/Endurance resource"]
+layout_mode = 2
+texture = ExtResource("8_n2a0h")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Opponent/Resource manager/Endurance resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Unity resource" type="MarginContainer" parent="Opponent/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Unity resource" type="TextureRect" parent="Opponent/Resource manager/Unity resource"]
+layout_mode = 2
+texture = ExtResource("9_fe680")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Opponent/Resource manager/Unity resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ingenuity resource" type="MarginContainer" parent="Opponent/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Ingenuity resource" type="TextureRect" parent="Opponent/Resource manager/Ingenuity resource"]
+layout_mode = 2
+texture = ExtResource("10_flv10")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Opponent/Resource manager/Ingenuity resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Strength resource" type="MarginContainer" parent="Opponent/Resource manager"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Strength resource" type="TextureRect" parent="Opponent/Resource manager/Strength resource"]
+layout_mode = 2
+texture = ExtResource("11_4kgqk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Opponent/Resource manager/Strength resource"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_68f1i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card Controler" parent="Opponent" node_paths=PackedStringArray("deck_btn", "graveyard_btn", "banished_btn") groups=["opponent"] instance=ExtResource("4_qnc0f")]
+position = Vector2(599, 4)
+scale = Vector2(0.999997, 0.999997)
+deck_btn = NodePath("../../Player/Card Controler/Deck btn")
+graveyard_btn = NodePath("../../Player/Card Controler/Banished btn")
+banished_btn = NodePath("../../Player/Card Controler/Banished btn")
+
+[node name="Deck btn" type="TextureButton" parent="Opponent/Card Controler"]
+offset_left = -433.001
+offset_top = 8.00002
+offset_right = -273.001
+offset_bottom = 228.0
+mouse_filter = 2
+texture_normal = ExtResource("4_tuprj")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Graveyard btn" type="TextureButton" parent="Opponent/Card Controler"]
+offset_left = -421.001
+offset_top = 236.0
+offset_right = -266.001
+offset_bottom = 313.0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("6_yhflu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="Opponent/Card Controler/Graveyard btn"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 22.0
+offset_right = 148.0
+offset_bottom = 58.0
+text = "GraveYard"
+label_settings = SubResource("LabelSettings_mp8op")
+
+[node name="Banished btn" type="TextureButton" parent="Opponent/Card Controler"]
+offset_left = -557.002
+offset_top = 238.001
+offset_right = -416.002
+offset_bottom = 313.001
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("7_pb5m1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Opponent/Card Controler/Banished btn"]
 layout_mode = 0
 offset_left = 11.0015
 offset_top = 15.999
@@ -729,12 +899,12 @@ label_settings = SubResource("LabelSettings_iw6d1")
 
 [node name="Display Card" type="Node2D" parent="."]
 visible = false
-position = Vector2(164, 210)
+position = Vector2(179, 210)
 script = ExtResource("5_tcvxb")
 
 [node name="CardTemplate" parent="Display Card" instance=ExtResource("6_7383x")]
 scale = Vector2(3, 3)
 cardInfo = SubResource("Resource_2u2dp")
 
-[connection signal="pressed" from="next phase btn" to="." method="_on_next_phase_btn_pressed"]
-[connection signal="pressed" from="end turn btn" to="." method="_on_end_turn_btn_pressed"]
+[connection signal="pressed" from="Player/next phase btn" to="." method="_on_next_phase_btn_pressed"]
+[connection signal="pressed" from="Player/end turn btn" to="." method="_on_end_turn_btn_pressed"]

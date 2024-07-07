@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cw7ye7msiyejp"]
+[gd_scene load_steps=16 format=3 uid="uid://cw7ye7msiyejp"]
 
 [ext_resource type="Script" path="res://scr/cards/card Template.gd" id="1_dq7io"]
 [ext_resource type="Texture2D" uid="uid://c7ncr1xoec8ni" path="res://assets/textures/SCG_Card_Frame.png" id="2_eqb1k"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://h307w1s2265g" path="res://assets/textures/Icons/factions/ingenuity_icon.png" id="5_ut3ux"]
 [ext_resource type="Texture2D" uid="uid://ugct8o3ae41s" path="res://assets/textures/Icons/power_icon.png" id="6_4ahjv"]
 [ext_resource type="Texture2D" uid="uid://yvmoavymhnbc" path="res://assets/textures/Icons/heart_icon.png" id="7_3h58n"]
+[ext_resource type="Texture2D" uid="uid://cixob3vlhclfj" path="res://assets/textures/ScrivenersBack.png" id="8_eq25t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fudf"]
 bg_color = Color(1, 1, 1, 1)
@@ -240,6 +241,11 @@ label_settings = SubResource("LabelSettings_2lyuj")
 layout_mode = 2
 text = "Name"
 label_settings = SubResource("LabelSettings_2lyuj")
+
+[node name="Card back" type="TextureRect" parent="Control/background"]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_eq25t")
 
 [node name="TextureButton" type="TextureButton" parent="Control/background"]
 modulate = Color(1, 1, 0.34902, 1)

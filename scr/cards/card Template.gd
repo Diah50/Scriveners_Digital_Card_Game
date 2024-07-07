@@ -14,6 +14,7 @@ class_name CardTemplate
 
 @onready var card_btn = $Control/background/TextureButton
 @onready var area2d = $Area2D
+@onready var card_back = $"Control/background/Card back"
 
 @export var cardInfo:CardData
  

@@ -1,5 +1,5 @@
 extends Control
-
+class_name Scrivener_Token
 var token_data:CardData
 @onready var power_text = $power/Label
 @onready var heath_text = $heart/Label

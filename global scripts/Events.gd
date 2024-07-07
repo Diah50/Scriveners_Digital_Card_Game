@@ -15,4 +15,6 @@ signal resource_count_updated(count:int,faction:CardData.Faction)
 
 enum TURN {PLAYER,OPPONENT}
 
+
+var phase_manager:Phase_Manager
 var turn:TURN

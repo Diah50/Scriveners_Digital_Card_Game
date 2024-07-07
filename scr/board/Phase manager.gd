@@ -1,13 +1,14 @@
 extends Node
-
+class_name Phase_Manager
 enum PHASES {START,DRAW,PRODUCTION,MAIN,END}
 var _game_phase:PHASES = PHASES.START
 @onready var phase_banner = $"phase banner"
 @onready var animator = $"phase banner/AnimationPlayer"
 @onready var top_text = $"phase banner/Polygon2D/Polygon2D2/Label"
 @onready var buttom_text = $"phase banner/Polygon2D2/Polygon2D2/Label2"
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	Events.phase_manager = self
 	Events.change_phase.connect(next_phase)
 
 
