@@ -4,10 +4,20 @@ class_name Exploration_Node
 signal redraw
 
 @onready var texture = $texture
+@onready var test_texture = preload("res://assets/textures/map node spirte.png")
+@onready var boss_texture = preload("res://assets/textures/Icons/node map icons/boss_battle_node.png")
+@onready var battel_texture = preload("res://assets/textures/Icons/node map icons/random_battle_node.png")
+@onready var merchant_texture = preload("res://assets/textures/Icons/node map icons/merchant_node.png")
+@onready var encounter_texture = preload("res://assets/textures/Icons/node map icons/random_encounter_node.png")
+@onready var story_texture = preload("res://assets/textures/Icons/node map icons/story_node.png")
+@onready var dungeon_texture = preload("res://assets/textures/Icons/node map icons/dungeon_node.png")
+
+
 @export var node_type:Exploration_Node_Resource.NODE_TYPES = Exploration_Node_Resource.NODE_TYPES.NONE:
 	set(type):
 		node_type = type
-		set_node_type_color()
+		if is_node_ready():
+			set_node_texture()
 @export var connected_nodes_to:Array[Exploration_Node] = []
 
 @export var debug_mode:= false
@@ -20,7 +30,7 @@ var last_pos:Vector2
 var last_connected_nodes:Array[Exploration_Node] = []
 
 func _ready():
-	set_node_type_color()
+	set_node_texture()
 	pass
 
 func _process(delta):
@@ -33,24 +43,43 @@ func _process(delta):
 func _draw():
 	if debug_mode:
 		for node in connected_nodes_to:
-			draw_line(Vector2.ZERO,to_local(node.global_position),Color.WHITE,5)
+			draw_line(Vector2.ZERO,to_local(node.global_position),set_node_color(),5)
 		#print("draw")
 
-# THis will be replaced with images for nodes
-func set_node_type_color():
+func set_node_texture():
 	match node_type:
 		Exploration_Node_Resource.NODE_TYPES.COMBAT:
-			modulate = Color.RED
+			texture.texture_normal = battel_texture 
 		Exploration_Node_Resource.NODE_TYPES.STORY:
-			modulate = Color.SEA_GREEN
+			texture.texture_normal = story_texture 
 		Exploration_Node_Resource.NODE_TYPES.BOSS:
-			modulate = Color.DARK_RED
+			texture.texture_normal = boss_texture
 		Exploration_Node_Resource.NODE_TYPES.EVENT:
-			modulate = Color.BLUE
+			texture.texture_normal = encounter_texture
 		Exploration_Node_Resource.NODE_TYPES.DUNGEON:
-			modulate = Color.PURPLE
+			texture.texture_normal = dungeon_texture
+		Exploration_Node_Resource.NODE_TYPES.MERCHANT:
+			texture.texture_normal = merchant_texture
 		Exploration_Node_Resource.NODE_TYPES.NONE:
-			modulate = Color.WHITE
+			texture.texture_normal = test_texture
+
+# THis will be replaced with images for nodes
+func set_node_color():
+	match node_type:
+		Exploration_Node_Resource.NODE_TYPES.COMBAT:
+			return Color.RED
+		Exploration_Node_Resource.NODE_TYPES.STORY:
+			return Color.SEA_GREEN
+		Exploration_Node_Resource.NODE_TYPES.BOSS:
+			return Color.DARK_RED
+		Exploration_Node_Resource.NODE_TYPES.EVENT:
+			return Color.SKY_BLUE
+		Exploration_Node_Resource.NODE_TYPES.DUNGEON:
+			return Color.DARK_BLUE
+		Exploration_Node_Resource.NODE_TYPES.MERCHANT:
+			return Color.YELLOW
+		Exploration_Node_Resource.NODE_TYPES.NONE:
+			return Color.WHITE
 
 func trigger_event():
 	match node_type:
@@ -64,6 +93,8 @@ func trigger_event():
 			print("An event was triggered")
 		Exploration_Node_Resource.NODE_TYPES.DUNGEON:
 			print("A Dungeon was triggered")
+		Exploration_Node_Resource.NODE_TYPES.MERCHANT:
+			print("A Merchant was triggered")
 		Exploration_Node_Resource.NODE_TYPES.NONE:
 			print("THis is blank node for testing")
 	pass

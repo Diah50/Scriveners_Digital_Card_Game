@@ -1,6 +1,6 @@
 extends Resource
 class_name Exploration_Node_Resource
-enum NODE_TYPES {COMBAT,STORY,BOSS,EVENT,DUNGEON,NONE}
+enum NODE_TYPES {COMBAT,STORY,BOSS,EVENT,DUNGEON,MERCHANT,NONE}
 
 
 @export var story_event:Dictionary

@@ -12,67 +12,8 @@ debug_mode = true
 
 [node name="Exploration node" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
 position = Vector2(54, 86)
-connected_nodes_to = [NodePath("../Exploration node3"), NodePath("../Exploration node2"), NodePath("../Exploration node5"), NodePath("../Exploration node6")]
-debug_mode = true
-
-[node name="Exploration node2" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(107, 263)
-node_type = 0
-connected_nodes_to = [NodePath("../Exploration node4")]
-debug_mode = true
-
-[node name="Exploration node3" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(294, 3)
-node_type = 0
-connected_nodes_to = [NodePath("../Exploration node4")]
-debug_mode = true
-
-[node name="Exploration node4" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
-modulate = Color(0.627451, 0.12549, 0.941176, 1)
-position = Vector2(354, 247)
-node_type = 4
-connected_nodes_to = [NodePath("../Exploration node7"), NodePath("../Exploration node8"), NodePath("../Exploration node9")]
-debug_mode = true
-
-[node name="Exploration node5" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
-modulate = Color(0, 0, 1, 1)
-position = Vector2(129, 201)
-node_type = 3
-connected_nodes_to = [NodePath("../Exploration node4")]
-debug_mode = true
-
-[node name="Exploration node6" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
-modulate = Color(0, 0, 1, 1)
-position = Vector2(226, 123)
-node_type = 3
-connected_nodes_to = [NodePath("../Exploration node4")]
-debug_mode = true
-
-[node name="Exploration node7" parent="node collection" instance=ExtResource("1_3s1kq")]
-modulate = Color(0.180392, 0.545098, 0.341176, 1)
-position = Vector2(450, 162)
-node_type = 1
-debug_mode = true
-
-[node name="Exploration node8" parent="node collection" instance=ExtResource("1_3s1kq")]
-modulate = Color(0.627451, 0.12549, 0.941176, 1)
-position = Vector2(583, 205)
-node_type = 4
-debug_mode = true
-
-[node name="Exploration node9" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
-modulate = Color(0, 0, 1, 1)
-position = Vector2(338, 341)
-node_type = 3
-connected_nodes_to = [NodePath("../Exploration node10")]
-debug_mode = true
-
-[node name="Exploration node10" parent="node collection" instance=ExtResource("1_3s1kq")]
-modulate = Color(0.180392, 0.545098, 0.341176, 1)
-position = Vector2(430, 297)
-node_type = 1
+node_type = 6
+connected_nodes_to = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
 debug_mode = true
 
 [node name="position icon" type="Marker2D" parent="."]
@@ -83,5 +24,7 @@ position = Vector2(0, -11)
 rotation = 3.14159
 scale = Vector2(0.0989176, 0.0989176)
 texture = ExtResource("3_jlhw8")
+
+[node name="connection lines" type="Node2D" parent="."]
 
 [connection signal="child_order_changed" from="node collection" to="." method="_on_node_collection_child_order_changed"]

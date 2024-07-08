@@ -1,19 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm27ownpk4x5c"]
+[gd_scene load_steps=3 format=3 uid="uid://bm27ownpk4x5c"]
 
-[ext_resource type="Texture2D" uid="uid://bcsiih6gc5w8p" path="res://assets/textures/map node spirte.png" id="1_pv5oj"]
 [ext_resource type="Script" path="res://scr/tools/exploration_node.gd" id="2_kou1m"]
-[ext_resource type="Texture2D" uid="uid://hqe5bl6it1li" path="res://assets/textures/map node spirte inverted.png" id="3_ggovo"]
+[ext_resource type="Texture2D" uid="uid://dvk4boqhm5gvb" path="res://assets/textures/Icons/node map icons/merchant_node.png" id="2_wl7lu"]
 
 [node name="Exploration node" type="Marker2D"]
 script = ExtResource("2_kou1m")
+node_type = 5
 
 [node name="texture" type="TextureButton" parent="."]
 offset_left = -23.0
 offset_top = -23.0
 offset_right = 23.0
 offset_bottom = 23.0
-texture_normal = ExtResource("1_pv5oj")
-texture_pressed = ExtResource("3_ggovo")
+texture_normal = ExtResource("2_wl7lu")
 ignore_texture_size = true
 stretch_mode = 4
 
