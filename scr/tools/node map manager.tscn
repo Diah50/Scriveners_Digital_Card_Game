@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://ttul2fyikik7"]
+[gd_scene load_steps=3 format=3 uid="uid://ttul2fyikik7"]
 
-[ext_resource type="PackedScene" uid="uid://bm27ownpk4x5c" path="res://scr/tools/exploration_node.tscn" id="1_3s1kq"]
 [ext_resource type="Script" path="res://scr/tools/node map manager.gd" id="1_llohh"]
 [ext_resource type="Texture2D" uid="uid://yssbp11a2cg7" path="res://assets/textures/Icons/card types/unit_icon.png" id="3_jlhw8"]
 
@@ -10,14 +9,7 @@ debug_mode = true
 
 [node name="node collection" type="Node2D" parent="."]
 
-[node name="Exploration node" parent="node collection" node_paths=PackedStringArray("connected_nodes_to") instance=ExtResource("1_3s1kq")]
-position = Vector2(54, 86)
-node_type = 6
-connected_nodes_to = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]
-debug_mode = true
-
 [node name="position icon" type="Marker2D" parent="."]
-position = Vector2(54, 86)
 
 [node name="Sprite2D" type="Sprite2D" parent="position icon"]
 position = Vector2(0, -11)
