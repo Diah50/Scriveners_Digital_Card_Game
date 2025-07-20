@@ -4,17 +4,64 @@ A Grid-based Tactical card game with an emphasis on community-creation.
 Using Angen by Teifion - https://github.com/Teifion/angen?tab=readme-ov-file
 
 ### Credits  
-**Project Manager:** Gideon (GMT-4) 
+Diahborne - Lead Artist and Director
 
-**Designer:** Diahborne (PST/PDT) and Gideon (GMT-4) 
+Barghest(upiorny_pies) - Programmer
 
-**Artist:** Diahborne (PST/PDT) 
+Bobit(_bobit) - Programmer
 
-**Programmer:** IceOfspade (GMT-5) and brogrammer 
+Botsamillion - Programmer
 
-**Writer:** Diahborne (PST/PDT), The_Ace_Arguer and Gideon (GMT-4) 
+Detective Spooky Lucario(lucina_von_beta_fuck_the_nolaran) - Artist
 
-**Legal/Marketing Advisor:** Should be filled ASAP. Lower time commitment, but must still be present for meetings. 
+Endarious(not_yet_recovered) - Writer
+
+Guilherme La Marin(guilhermelamarin) - Graphic Designer/Video Editor
+
+Hexidecimark - Lead Programmer
+
+Hyde(tebali) - Narrtative and Artist
+
+Helokus(helokus) - Programmer
+
+IceofSpade(glacialspade) - Programmer
+
+Livin(livin3410) - Music Composer
+
+LoneTake0 - Narrative Designer
+
+Magos Epsilus Dammek-Yoth(magosepsilusdammekyoth) - Narrative Designer
+
+OtherMrWoodChuck(morethanawoodchuck) - Game Designer
+
+Pixel_Saiyan(pixel_saiyan) - Artist
+
+Sidewalk(sidewalk.owo) - Website Designer
+
+SillyGayKitty(sillygaykitty) - Narrative Designer
+
+Sketch(sketchyirregulord) - Artist
+
+The_Ace_Arguer(the_ace_arguer_0096) - Game Designer
+
+Yenni_Quan(yennefer_nguyen) - Narrative Designer
+
+valgumir - Programmer
+
+woesoferas - Music and Sound
+
+Whiskey-Based Economy(sadlittlepudgypug) - Game Designer/Project Manager
+
+Chlorine(chlorilotion) - Artist
+
+Gogo FanRally(gogofanrally) - Artist
+
+fresh(ani.khan) - Music and Sound
+
+Doktor(flensosten6969) - Programmer
+
+Gregor(gregor3379) - Artist
+
 
 
 
