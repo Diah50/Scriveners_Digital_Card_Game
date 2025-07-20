@@ -1,4 +1,4 @@
-# Scriveners_Digital_Card_Game
+# Highborne Heartrogue
 A Grid-based Tactical card game set in the Highborne universe, a far-east asian inspired medieval fantasy world.
 
 Using Angen by Teifion - https://github.com/Teifion/angen?tab=readme-ov-file
